@@ -6,3 +6,8 @@ body {
   padding: 20px;
   background-color: #F6F3EC;
 }
+
+td {
+  vertical-align: top;
+  text-align: center;
+}
