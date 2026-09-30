@@ -4,12 +4,11 @@ body {
   max-width: 700px;
   margin: 0 auto;
   padding: 20px;
+  background-color: #F6F3EC;
 }
 
 table img {
-  width: 250px;
-  border: 2px solid #0A3A7A;
-  border-radius: 8px;
+  width: 160px;
 }
 
 td {
