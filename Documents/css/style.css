@@ -5,4 +5,15 @@ body {
   margin: 0 auto;
   padding: 20px;
 }
+
+table img {
+  width: 480px;
+  border: 2px solid #0A3A7A;
+  border-radius: 8px;
+}
+
+td {
+  vertical-align: top;
+  text-align: center;
+}
   
