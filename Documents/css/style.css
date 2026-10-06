@@ -11,3 +11,13 @@ td {
   vertical-align: top;
   text-align: center;
 }
+
+.swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 1px solid #1E1E1E;
+  border-radius: 4px;
+}
