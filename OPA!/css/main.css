@@ -55,6 +55,12 @@ h5 {
   width: 235px;
   height: 50px;
   font-family: var(--font-body);
+
+  display: inline-flex;      /* gjør at width/height virker */
+  align-items: center;       /* teksten midt i, vertikalt */
+  justify-content: center;   /* teksten midt i, horisontalt */
+  text-decoration: none;     /* fjerner understreken */
+  box-sizing: border-box;    /* 50px inkluderer border */
 }
 /*den oransje knappen*/
 .primary {
