@@ -76,6 +76,7 @@ header {
   align-items: center;
   height: 95px;
   padding: 0px 24px;
+  box-sizing: border-box;
 }
 
 .logo{
