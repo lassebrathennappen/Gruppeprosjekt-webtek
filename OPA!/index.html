@@ -1,64 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Gjør at sepsielle tegn og bokstaver vises på nettsiden istedenfor errors-->
+    <!-- Gjør at spesielle tegn og bokstaver vises på nettsiden istedenfor errors-->
     <meta charset="UTF-8">
     <!-- Tilpasser nettsiden til forskjellige enheter-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>OPA! – Greek restaurant in Trondheim</title>
+    <title>Menu – OPA!</title>  <!-- ← endret -->
     <!-- Beskrivelse under nettsiden på google -->
-    <meta name="description" content="OPA! is a Greek restaurant in Trondheim serving traditional food with a modern twist. See the menu and book a table.">
+    <meta name="description" content="See the menu at OPA!, a Greek restaurant in Trondheim.">  <!-- ← endret -->
     <!-- Link til stylingen-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">  <!-- ← endret: ../ foran -->
 </head>
 <body>
-
     <header>
-         <!-- Navbar-->
-        <a href="index.html" class="logo">OPA!</a>
+        <!-- Navbar-->
+        <a href="../index.html" class="logo">OPA!</a>  <!-- ← endret: ../ foran -->
         <nav>
             <ul>
-                <li><a href="pages/menu.html">MENU</a></li>
-                <li><a href="pages/events.html">EVENTS</a></li>
-                <li><a href="pages/about-us.html">ABOUT US</a></li>
-                <li><a href="pages/contact.html">CONTACT</a></li>
-                <li><a href="pages/reservations.html" class="nav-button">RESERVATIONS</a></li>
+                <!-- ← endret: fjernet "pages/" fra alle lenkene under -->
+                <li><a href="menu.html" aria-current="page">Menu</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="about-us.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservations.html" class="nav-button">Reservations</a></li>
             </ul>
         </nav>
     </header>
-
-     <main>
-         <!-- an old story served differently -->
-        <section class="banner">
-        
-        </section>
-
-        <!-- Welcome + bilde-->
-        <section class="welcome">
-        
-        </section>
-    
-        <!-- oliven stripe med Aria hidden for accessibility -->
-        <div class="divider" aria-hidden="true">
-        </div>
-
-        <!-- interiørbilde+adresse+knapper-->
-        <section class="location">
-        
-        </section>
-
-        <!-- mat reveiw-->
-        <section class="reveiw">
-        
-        </section>
-
-    </main>
-    <footer>
-        
-    </footer>
-    
 </body>
 </html>
