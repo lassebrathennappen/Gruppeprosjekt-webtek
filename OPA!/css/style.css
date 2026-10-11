@@ -379,6 +379,7 @@ footer {
 /* Kategorilenker */
 .menu-tabs {
   margin: 64px 16px 96px;
+}  
 
 .menu-tabs ul {
   flex-wrap: wrap;
