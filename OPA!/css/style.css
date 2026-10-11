@@ -257,8 +257,8 @@ footer {
   grid-template-rows: 100%;   /* samme her */
   overflow: hidden;
   background-color: var(--off-white);
-  height: 80vh;
-  min-height: 500px;
+  height: 100vh;
+  min-height: 600px;
 }
 
 .location img {
