@@ -357,21 +357,17 @@ footer {
 }
 
 /* Bildegalleri */
-.gallery {
+.review-images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  box-sizing: border-box;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 16px;
+  gap: 50px;
 }
 
-.gallery img {
-  display: block;
+.review-images img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  display: block;
 }
 
 /* Kategorilenker */
