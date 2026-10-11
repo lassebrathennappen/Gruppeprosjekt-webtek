@@ -375,7 +375,7 @@ footer {
 .menu-tabs ul {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 48px;
+  gap: 12px 48px;
 }
 
 .menu-tab {
