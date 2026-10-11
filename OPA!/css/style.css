@@ -356,6 +356,17 @@ footer {
   padding: 0 16px;
 }
 
+/* Bildegalleri uten blå bakgrunn */
+.reviews-light {
+  background-color: var(--dark-blue);
+  color: var(--off-black);
+  padding-bottom: 0;     
+}
+
+.reviews-light.quote {
+  margin-bottom: 100px;
+}
+
 /* Kategorilenker */
 .menu-tabs {
   margin: 48px 16px;
