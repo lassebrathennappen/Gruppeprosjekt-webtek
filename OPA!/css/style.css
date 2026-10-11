@@ -22,36 +22,6 @@ body {
   color: var(--dark-blue);
 }
 
-h1 {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 400; /*regular*/
-}
-
-h2 {
-  font-size: 40px;
-  font-weight: 400;
-}
-
-h3 {
-  font-size: 38px;
-  font-weight: 400; 
-}
-
-h4 {
-  font-size: 32px;
-  font-weight: 700; /*bold*/
-}
-
-
-p {
-  font-size: 24px;
-}
-
-h5 {
-  font-size: 20px;
-  font-weight: 400;
-}
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 /*navbar*/
@@ -127,6 +97,7 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
   width: 235px;
   height: 50px;
   font-family: var(--font-body);
+  font-size: 24px;
 
   display: inline-flex;      /* gjør at width/height virker */
   align-items: center;       /* teksten midt i, vertikalt */
@@ -152,32 +123,54 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 /*styling for main på index.html*/
 
 .banner{ /*denne er universal for alle sidene egt*/
+  display: flex;
   height: 162px;
   background-color: var(--blue);
-  color: var(--off-white);
   align-items: center;       /* teksten midt i, vertikalt */
   justify-content: center;   /* teksten midt i, horisontalt */
 }
 
+.banner h1 {
+  margin: 0;
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+}
+
 .welcome{
   display: grid;
-  grid-template-colums: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   height: 767px;
   color: var(--dark-blue);
 }
 
 
 .welcome img {
+  display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
+  height: 100%;        /* fyller hele 767px */
+  object-fit: cover;   /* beskjærer i stedet for å strekke */
 }
 
 .welcome-text{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  padding: 0 110px;
+}
+
+.welcome-text h2{
+  font-size: 48px;
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.welcome-text p{
+  font-family: var(--font-body);
+  font-size: 36px;
+  max-width: 477px;
 }
 
 .divider {
@@ -193,13 +186,14 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 .location {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: var(--cream);
+  background-color: var(--off-white);
 }
 
 .location img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  display: block;  /* fjerner den lille luka under bilder */
 }
 
 .location-text{
@@ -208,10 +202,14 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
   justify-content: center;
   align-items: center;
   gap: 40px;
+  padding: 0 70px;
 }
 
 .location-text h2 {
   align-self: stretch;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
 }
 
 .location-text address {
