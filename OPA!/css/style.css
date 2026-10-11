@@ -352,7 +352,7 @@ footer {
 
 /* Sitatet under banneret */
 .banner + .quote {
-  margin: 48px 0 30px;
+  margin: 48px 0 48px;
   padding: 0 16px;
 }
 
@@ -371,7 +371,7 @@ footer {
   display: inline-block;
   padding: 8px 4px;
   color: var(--dark-blue);
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   text-transform: none; /* overstyrer uppercase fra "nav a" */
 }
@@ -422,7 +422,7 @@ footer {
   margin: 0;
   font-size: 20px;
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 
