@@ -177,5 +177,17 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
+//birgitte som prøver seg fram
+.menu-tab {
+  color: var(--dark-blue);
+  font-weight: 700;
+  text-transform: none;
+}
+
+.menu-tab.active {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
 
 
