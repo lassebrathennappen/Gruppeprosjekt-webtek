@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Erica+One&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- Script som bytter mellom menykategoriene -->
+    <script src="scripts/menu.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,5 +30,226 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Lar tastaturbrukere hoppe over navbaren -->
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Hovedinnhold -->
+    <main id="main">
+        <!-- Banner med sidetittel -->
+        <div class="banner">
+            <h1>The Menu</h1>
+        </div>
+
+        <!-- Sitat fra anmelder -->
+        <figure class="quote">
+            <blockquote>
+                <p>“Playful, inventive and fresh!”</p>
+            </blockquote>
+            <figcaption>– Adressavisa food critic</figcaption>
+        </figure>
+
+        <!-- Fire små bilder av retter -->
+        <div class="gallery">
+            <img src="images/gallery-feta.png" alt="Feta cheese with olive oil served in a dark dish">
+            <img src="images/gallery-charcuterie.png" alt="A hand picking cured meat and cheese from a charcuterie plate">
+            <img src="images/gallery-skewer-bowl.png" alt="A grilled skewer served in a bowl next to a drink">
+            <img src="images/gallery-olive-skewers.png" alt="Skewers with olives and grilled vegetables on a dark plate">
+        </div>
+
+        <!-- Lenker for å bytte mellom menykategoriene (menu.js) -->
+        <nav class="menu-tabs" aria-label="Menu categories">
+            <ul>
+                <li><a class="menu-tab" href="#starters">Starters</a></li>
+                <li><a class="menu-tab" href="#dinner">Dinner</a></li>
+                <li><a class="menu-tab" href="#special-grill">Special Grill</a></li>
+                <li><a class="menu-tab" href="#desserts">Desserts</a></li>
+                <li><a class="menu-tab" href="#lunch">Lunch</a></li>
+                <li><a class="menu-tab" href="#drinks">Drinks</a></li>
+            </ul>
+        </nav>
+
+        <!-- Starters -->
+        <section class="menu-section" id="starters" aria-labelledby="starters-title">
+            <h2 class="visually-hidden" id="starters-title">Starters</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Tzatziki &amp; Warm Pita</h3>
+                    <p class="dish-desc">Strained yoghurt, cucumber, garlic, dill, olive oil, grilled pita</p>
+                    <p class="dish-price">95 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Whipped Feta with Honey</h3>
+                    <p class="dish-desc">Whipped feta, thyme honey, walnuts, black pepper, charred sourdough</p>
+                    <p class="dish-price">115 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Zucchini Keftedes</h3>
+                    <p class="dish-desc">Crispy zucchini and mint fritters, lemon yoghurt, pickled chili</p>
+                    <p class="dish-price">105 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Dolmades</h3>
+                    <p class="dish-desc">Vine leaves stuffed with herbed rice, dill, lemon, olive oil</p>
+                    <p class="dish-price">99 kr</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Dinner -->
+        <section class="menu-section" id="dinner" aria-labelledby="dinner-title">
+            <h2 class="visually-hidden" id="dinner-title">Dinner</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Deconstructed Moussaka</h3>
+                    <p class="dish-desc">Roasted aubergine, spiced lamb ragù, béchamel foam, crispy potato shards, smoked paprika oil, fresh oregano</p>
+                    <p class="dish-price">235 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Slow-Cooked Kleftiko Pie</h3>
+                    <p class="dish-desc">Lamb shoulder, garlic, rosemary, lemon, kefalotyri cheese, puff pastry lid, roasted baby potatoes, red wine jus</p>
+                    <p class="dish-price">289 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Souvlaki Tacos</h3>
+                    <p class="dish-desc">Grilled chicken thighs, mini pita tortillas, tzatziki with dill, pickled red onion, cherry tomato salsa, crumbled feta, lemon zest</p>
+                    <p class="dish-price">219 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Octopus &amp; Fava Bowl</h3>
+                    <p class="dish-desc">Charred octopus, yellow split pea purée, capers, shaved fennel, blood orange segments, ouzo vinaigrette, microgreens</p>
+                    <p class="dish-price">269 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Gyros Risotto</h3>
+                    <p class="dish-desc">Arborio rice, shaved pork gyros, white wine, chicken stock, tzatziki drizzle, crispy pita crumbs, cherry tomatoes, fresh parsley</p>
+                    <p class="dish-price">239 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Stuffed Pepper Gemista</h3>
+                    <p class="dish-desc">Roasted bell peppers, herbed quinoa, pine nuts, sun-dried tomatoes, feta cream, smoked aubergine purée, basil oil</p>
+                    <p class="dish-price">215 kr</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Special Grill -->
+        <section class="menu-section" id="special-grill" aria-labelledby="special-grill-title">
+            <h2 class="visually-hidden" id="special-grill-title">Special Grill</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Smoky Bifteki Sliders</h3>
+                    <p class="dish-desc">Beef and lamb patties stuffed with feta, brioche buns, charred tomato relish, rocket, pickled cucumber, oregano mayo</p>
+                    <p class="dish-price">199 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Lamb Chops with Salsa Verde Greco</h3>
+                    <p class="dish-desc">Grilled lamb cutlets, garlic-lemon marinade, parsley, dill, capers, kalamata olives, olive oil, charred lemon halves</p>
+                    <p class="dish-price">289 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Loukaniko Hot Dogs</h3>
+                    <p class="dish-desc">Grilled Greek pork sausage with orange peel and fennel, toasted pita roll, spicy tirokafteri, caramelised onions, crispy fried shallots</p>
+                    <p class="dish-price">169 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Honey-Glazed Halloumi Skewers</h3>
+                    <p class="dish-desc">Grilled halloumi, watermelon cubes, red onion, thyme honey glaze, mint, pomegranate seeds, lime zest</p>
+                    <p class="dish-price">179 kr</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-section" id="desserts" aria-labelledby="desserts-title">
+            <h2 class="visually-hidden" id="desserts-title">Desserts</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Baklava Cheesecake</h3>
+                    <p class="dish-desc">Pistachio and honey, filo crumble, cinnamon cream</p>
+                    <p class="dish-price">109 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Galaktoboureko</h3>
+                    <p class="dish-desc">Semolina custard in crisp filo, orange syrup</p>
+                    <p class="dish-price">99 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Loukoumades</h3>
+                    <p class="dish-desc">Warm Greek doughnuts, thyme honey, walnuts, cinnamon</p>
+                    <p class="dish-price">95 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Yoghurt with Spoon Sweets</h3>
+                    <p class="dish-desc">Thick Greek yoghurt, candied cherries, pistachios</p>
+                    <p class="dish-price">89 kr</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Lunch -->
+        <section class="menu-section" id="lunch" aria-labelledby="lunch-title">
+            <h2 class="visually-hidden" id="lunch-title">Lunch</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Chicken Gyros Pita</h3>
+                    <p class="dish-desc">Grilled chicken, tomato, red onion, tzatziki and crispy fries wrapped in warm pita</p>
+                    <p class="dish-price">149 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Greek Salad Bowl</h3>
+                    <p class="dish-desc">Tomato, cucumber, red onion, olives, feta, oregano dressing</p>
+                    <p class="dish-price">139 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Spanakopita &amp; Salad</h3>
+                    <p class="dish-desc">Spinach and feta pie in crisp filo, green salad, lemon dressing</p>
+                    <p class="dish-price">129 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Lunch Meze Plate</h3>
+                    <p class="dish-desc">Tzatziki, hummus, olives, feta, dolmades and warm pita</p>
+                    <p class="dish-price">159 kr</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Drinks -->
+        <section class="menu-section" id="drinks" aria-labelledby="drinks-title">
+            <h2 class="visually-hidden" id="drinks-title">Drinks</h2>
+            <ul class="dish-list">
+                <li class="dish">
+                    <h3>Assyrtiko (glass)</h3>
+                    <p class="dish-desc">Crisp white wine from Santorini with citrus and sea salt notes</p>
+                    <p class="dish-price">129 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Agiorgitiko (glass)</h3>
+                    <p class="dish-desc">Smooth red wine with ripe cherry and soft spice</p>
+                    <p class="dish-price">129 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Ouzo (4 cl)</h3>
+                    <p class="dish-desc">Served with ice and water</p>
+                    <p class="dish-price">89 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Mythos Lager (0.4 l)</h3>
+                    <p class="dish-desc">Light Greek lager</p>
+                    <p class="dish-price">99 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Greek Frappé</h3>
+                    <p class="dish-desc">Iced coffee whipped to a foam, with or without milk</p>
+                    <p class="dish-price">65 kr</p>
+                </li>
+                <li class="dish">
+                    <h3>Homemade Lemonade</h3>
+                    <p class="dish-desc">Lemon, thyme and mint</p>
+                    <p class="dish-price">69 kr</p>
+                </li>
+            </ul>
+        </section>
+    </main>
 </body>
 </html>
