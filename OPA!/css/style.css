@@ -180,7 +180,7 @@ footer {
 }
 
 .pillbutton:hover {
-  transform: scale(1.3); /* 5 % større */
+  transform: scale(1.15); /* 15 % større */
 }
 /*---------------------------------------------------------------------------------------------------------------------*/
 
@@ -202,13 +202,13 @@ footer {
   font-weight: 400;
 }
 
-.welcome{
+.welcome {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 600px;
+  height: calc(100vh - 95px - 162px); /* skjermhøyde minus header og banner */
+  min-height: 400px;                  /* så den ikke blir altfor lav på små skjermer */
   color: var(--dark-blue);
 }
-
 
 .welcome img {
   display: block;  /* fjerner den lille luka under bilder */
@@ -251,14 +251,15 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--off-white);
-  height: 600px;
+  height: 80vh;       /* én skjermhøyde */
+  min-height: 500px;
 }
 
 .location img {
+  display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
   object-fit: cover;
-  display: block;  /* fjerner den lille luka under bilder */
 }
 
 .location-text{
