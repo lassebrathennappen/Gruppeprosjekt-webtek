@@ -356,20 +356,6 @@ footer {
   padding: 0 16px;
 }
 
-/* Bildegalleri */
-.review-images {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 50px;
-}
-
-.review-images img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-}
-
 /* Kategorilenker */
 .menu-tabs {
   margin: 48px 16px;
