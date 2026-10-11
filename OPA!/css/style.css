@@ -24,14 +24,12 @@ h1 {
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 400; /*regular*/
-  color: var(--dark-blue);
 }
 
 h2 {
   font-size: 40px;
   font-weight: 400;
   font-family: var(--font-body);
-  color: var(--off-black);
 }
 
 h3 {
