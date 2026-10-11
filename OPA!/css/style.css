@@ -18,6 +18,7 @@
 body {
   margin: 0;
   background-color: var(--off-white);
+  font-family: var(--font-body);
 }
 
 h1 {
@@ -150,10 +151,18 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
   background-color: var(--blue);
 }
 
+.banner h1{
+  color: var(--off-white);
+}
+
 .welcome{
   display: grid;
-  grid-template_colums: 1fr 1fr;
+  grid-template-colums: 1fr 1fr;
   height: 767px;
+}
+
+.welcome h2{
+  color: var(--dark-blue);
 }
 
 .welcome img {
@@ -172,6 +181,14 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 .location{}
 
 .location-text{}
+
+.location-text address {
+  font-style: normal;
+}
+
+.location-text address a {
+  color: var(--dark-blue);
+}
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
