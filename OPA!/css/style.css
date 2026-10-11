@@ -352,19 +352,15 @@ footer {
 
 /* Sitatet under banneret */
 .banner + .quote {
-  margin: 48px 0 48px;
+  margin: 48px 0 100px;
   padding: 0 16px;
 }
 
 /* Bildegalleri uten blå bakgrunn */
 .reviews-light {
   background-color: var(--off-white);
-  padding: 80px 50px;
-  color: var(--dark-blue);     
-}
-
-.reviews-light.quote {
-  margin-bottom: 100px;
+  padding: 0 50px;
+  color: var(--dark-blue);
 }
 
 /* Kategorilenker */
