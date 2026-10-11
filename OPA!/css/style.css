@@ -334,7 +334,9 @@ footer {
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
-/* meny-siden, farge på kategorilenkene */
+/* meny-siden (menu.html) */
+
+/* farge på kategorilenkene */
 .menu-tab {
   color: var(--dark-blue);
   font-weight: 700;
@@ -346,9 +348,6 @@ footer {
   text-decoration: underline;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------*/
-
-/* meny-siden (menu.html) */
 
 /* Sitatet under banneret */
 .banner + .quote {
