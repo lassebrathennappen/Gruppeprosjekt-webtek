@@ -89,6 +89,64 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
   font-weight: 700; 
 }
 
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*footer*/
+
+footer {
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  display: flex;
+  justify-content: space-between; /* logo til venstre, info til høyre */
+  align-items: center;
+  padding: 80px 50px;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo .logo {
+  font-size: 96px;
+}
+
+.footer-logo p {
+  margin: 0;
+  font-size: 24px;
+}
+
+.footer-info {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col {
+  text-align: right;
+}
+
+.footer-col h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.footer-col p,
+.footer-col address {
+  font-size: 16px;
+  font-style: normal;
+  margin: 0 0 16px;
+}
+
+.footer-col a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.footer-col address a {
+  text-decoration: underline; /* bare adressen er understreket i mockupen */
+}
+
+
 /*---------------------------------------------------------------------------------------------------------------------*/
 /*for pille knappene*/
 /*feks class= primary pillbutton*/
@@ -214,10 +272,50 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 
 .location-text address {
   font-style: normal;
+  font-size: 24px;
 }
 
 .location-text address a {
   color: var(--dark-blue);
+}
+
+
+.reviews {
+  background-color: var(--blue);
+  padding: 80px 50px;
+  color: var(--off-white);
+}
+
+.quote {
+  margin: 0 0 70px;
+  text-align: center;
+}
+
+.quote blockquote {
+  margin: 0;
+}
+
+.quote blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 48px;
+}
+
+.quote figcaption {
+  font-size: 24px;
+}
+
+.review-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.review-images img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
 }
 
 /*---------------------------------------------------------------------------------------------------------------------*/
