@@ -339,5 +339,102 @@ footer {
   text-decoration: underline;
 }
 
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* meny-siden (menu.html) */
+
+/* Sitatet under banneret */
+.banner + .quote {
+  margin: 48px 0 30px;
+  padding: 0 16px;
+}
+
+/* Bildegalleri */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  box-sizing: border-box;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Kategorilenker */
+.menu-tabs {
+  margin: 48px 16px;
+}
+
+.menu-tabs ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 48px;
+}
+
+.menu-tab {
+  display: inline-block;
+  padding: 8px 4px;
+  color: var(--dark-blue);
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: none; /* overstyrer uppercase fra "nav a" */
+}
+
+.menu-tab:hover,
+.menu-tab.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.menu-tab.active { /* valgt kategori */
+  color: var(--orange);
+}
+
+/* Menyseksjoner og retter */
+.menu-section {
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+}
+
+.menu-section[hidden] {
+  display: none;
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dish h3 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.dish-desc {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.dish-price {
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+}
+
 
 
