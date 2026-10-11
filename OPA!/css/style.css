@@ -358,9 +358,9 @@ footer {
 
 /* Bildegalleri uten blå bakgrunn */
 .reviews-light {
-  background-color: var(--dark-blue);
-  color: var(--off-black);
-  padding-bottom: 0;     
+  background-color: var(--off-white);
+  padding: 80px 50px;
+  color: var(--dark-blue);     
 }
 
 .reviews-light.quote {
