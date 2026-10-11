@@ -337,6 +337,19 @@ footer {
 
 /* meny-siden (menu.html) */
 
+/* skjermlesing av tekst */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* farge på kategorilenkene */
 .menu-tab {
   color: var(--dark-blue);
@@ -365,13 +378,12 @@ footer {
 
 /* Kategorilenker */
 .menu-tabs {
-  margin: 48px 16px;
-}
+  margin: 64px 16px 96px;
 
 .menu-tabs ul {
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px 48px;
+  gap: 12px 72px;
 }
 
 .menu-tab {
