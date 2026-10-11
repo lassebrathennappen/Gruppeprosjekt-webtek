@@ -177,7 +177,7 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 
 /*---------------------------------------------------------------------------------------------------------------------*/
 
-//birgitte som prøver seg fram
+/* meny-siden, farge på kategorilenkene */
 .menu-tab {
   color: var(--dark-blue);
   font-weight: 700;
