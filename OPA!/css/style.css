@@ -19,6 +19,7 @@ body {
   margin: 0;
   background-color: var(--off-white);
   font-family: var(--font-body);
+  color: var(--dark-blue);
 }
 
 h1 {
@@ -30,24 +31,20 @@ h1 {
 h2 {
   font-size: 40px;
   font-weight: 400;
-  font-family: var(--font-body);
 }
 
 h3 {
   font-size: 32px;
   font-weight: 700; /*bold*/
-  font-family: var(--font-body);
 }
 
 p {
   font-size: 24px;
-  font-family: var(--font-body);
 }
 
 h5 {
   font-size: 20px;
   font-weight: 400;
-  font-family: var(--font-body);
 }
 
 /*---------------------------------------------------------------------------------------------------------------------*/
@@ -67,6 +64,7 @@ nav ul{
   display: flex; /*så de havner på en rad*/
   align-items: center;
   gap: 40px; /*space mellom teksten*/
+  font-family: var(--font-body);
 }
 
 
