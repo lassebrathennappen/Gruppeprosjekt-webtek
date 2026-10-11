@@ -162,6 +162,8 @@ footer {
   justify-content: center;   /* teksten midt i, horisontalt */
   text-decoration: none;     /* fjerner understreken */
   box-sizing: border-box;    /* 50px inkluderer border */
+
+  transition: transform 0.2s ease;
 }
 /*den oransje knappen*/
 .primary {
@@ -175,6 +177,10 @@ footer {
   background-color: var(--off-white);
   border: 2px solid var(--dark-blue);
   color: var(--dark-blue);
+}
+
+.pillbutton:hover {
+  transform: scale(1.3); /* 5 % større */
 }
 /*---------------------------------------------------------------------------------------------------------------------*/
 
