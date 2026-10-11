@@ -38,6 +38,12 @@ h3 {
   font-weight: 700; /*bold*/
 }
 
+h4 {
+  font-size: 32px;
+  font-weight: 400; 
+}
+
+
 p {
   font-size: 24px;
 }
@@ -65,6 +71,7 @@ nav ul{
   align-items: center;
   gap: 40px; /*space mellom teksten*/
   font-family: var(--font-body);
+  color: var(--off-white);
 }
 
 
@@ -147,38 +154,65 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
 .banner{ /*denne er universal for alle sidene egt*/
   height: 162px;
   background-color: var(--blue);
-}
-
-.banner h1{
   color: var(--off-white);
+  align-items: center;       /* teksten midt i, vertikalt */
+  justify-content: center;   /* teksten midt i, horisontalt */
 }
 
 .welcome{
   display: grid;
   grid-template-colums: 1fr 1fr;
   height: 767px;
-}
-
-.welcome h2{
   color: var(--dark-blue);
 }
+
 
 .welcome img {
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 
 .welcome-text{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
-.divider{}
+.divider {
+  height: 118px;
+  border-top: 5px solid var(--dark-blue);
+  border-bottom: 5px solid var(--dark-blue);
+  background-image: url("../images/dekor.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 70px;
+}
 
-.location{}
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--cream);
+}
 
-.location-text{}
+.location img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.location-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.location-text h2 {
+  align-self: stretch;
+}
 
 .location-text address {
   font-style: normal;
