@@ -268,17 +268,18 @@ footer {
   object-fit: cover;
 }
 
-.location-text{
+.location-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 30px;        
   padding: 0 70px;
 }
 
 .location-text h2 {
   align-self: stretch;
+  margin: 0;          /* fjerner den skjulte standardavstanden */
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 400;
