@@ -199,7 +199,7 @@ footer {
 .welcome{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 767px;
+  height: 600px;
   color: var(--dark-blue);
 }
 
@@ -245,6 +245,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--off-white);
+  height: 600px;
 }
 
 .location img {
