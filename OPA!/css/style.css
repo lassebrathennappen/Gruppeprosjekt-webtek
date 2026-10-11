@@ -18,9 +18,6 @@
 body {
   margin: 0;
   background-color: var(--off-white);
-  color: var(--off-black);
-  font-family: var(--font-body);
-  font-size: 24px;
 }
 
 h1 {
@@ -33,20 +30,25 @@ h1 {
 h2 {
   font-size: 40px;
   font-weight: 400;
+  font-family: var(--font-body);
+  color: var(--off-black);
 }
 
 h3 {
   font-size: 32px;
   font-weight: 700; /*bold*/
+  font-family: var(--font-body);
 }
 
 p {
   font-size: 24px;
+  font-family: var(--font-body);
 }
 
 h5 {
   font-size: 20px;
   font-weight: 400;
+  font-family: var(--font-body);
 }
 
 /*---------------------------------------------------------------------------------------------------------------------*/
@@ -81,7 +83,7 @@ header {
 
 .logo{
   font-family: var(--font-display);
-  font-size: 48px;
+  font-size: 64px;
   color: var(--off-white);
   text-decoration: none;
 }
@@ -141,6 +143,38 @@ nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på r
   border: 2px solid var(--dark-blue);
   color: var(--dark-blue);
 }
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/*styling for main på index.html*/
+
+.banner{ /*denne er universal for alle sidene egt*/
+  height: 162px;
+  background-color: var(--blue);
+}
+
+.welcome{
+  display: grid;
+  grid-template_colums: 1fr 1fr;
+  height: 767px;
+}
+
+.welcome img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.welcome-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.divider{}
+
+.location{}
+
+.location-text{}
+
 /*---------------------------------------------------------------------------------------------------------------------*/
 
 
