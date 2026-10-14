@@ -340,19 +340,16 @@ footer {
 .Opa-Story {
     display:flex;
     min-height:700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
+    overflow: hidden;           /* ingenting får renne ut */
+    height: calc(100vh - 95px - 162px);
+    min-height: 400px;
+    color: var(--dark-blue);
 }
 
-.Opa-Story {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
-  overflow: hidden;           /* ingenting får renne ut */
-  height: calc(100vh - 95px - 162px);
-  min-height: 400px;
-  color: var(--dark-blue);
-}
-
-.image-Parents {
+.image-Parents img {
   display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
   height: 100%;        /* fyller hele 767px */
@@ -384,19 +381,16 @@ footer {
 .Grandma {
     display:flex;
     min-height:700px;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
+    overflow: hidden;           /* ingenting får renne ut */
+    height: calc(100vh - 95px - 162px);
+    min-height: 400px;
+    color: var(--dark-blue);
+  }
 
-.Grandma {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
-  overflow: hidden;           /* ingenting får renne ut */
-  height: calc(100vh - 95px - 162px);
-  min-height: 400px;
-  color: var(--dark-blue);
-}
-
-.image-grandma {
+.image-grandma img {
   display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
   height: 100%;        /* fyller hele 767px */
@@ -429,19 +423,16 @@ footer {
 .vision {
     display:flex;
     min-height:700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
+    overflow: hidden;           /* ingenting får renne ut */
+    height: calc(100vh - 95px - 162px);
+    min-height: 400px;
+    color: var(--dark-blue);
 }
 
-.vision {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
-  overflow: hidden;           /* ingenting får renne ut */
-  height: calc(100vh - 95px - 162px);
-  min-height: 400px;
-  color: var(--dark-blue);
-}
-
-.image-vision {
+.image-vision img {
   display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
   height: 100%;        /* fyller hele 767px */
