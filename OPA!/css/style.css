@@ -361,20 +361,22 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 110px;
+  padding: 80px;
 }
 
 .Story-text h2{
-  font-size: 48px;
+  font-size: 60px;
   font-family: var(--font-display);
   font-weight: 400;
   margin: 0 0 24px;
+  margin-bottom: 30px
 }
 
 .Story-text p{
   font-family: var(--font-body);
-  font-size: 36px;
-  max-width: 477px;
+  font-size: 20px;
+  line-height: 1.5; 
+  max-width: 500px;
   margin: 0;
 }
 /* Section 2 about us */
