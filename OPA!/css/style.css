@@ -338,16 +338,20 @@ footer {
 /* About-us- siden */
 
 .Split-section {
-    display:flex;
     min-height:700px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
     overflow: hidden;           /* ingenting får renne ut */
-    height: calc(100vh - 95px - 162px);
+    height: 700px
     min-height: 400px;
     color: var(--dark-blue);
 }
+
+.image-about {
+  height: 100%;
+}
+
 
 .image-about img {
   display: block;  /* fjerner den lille luka under bilder */
@@ -365,7 +369,7 @@ footer {
 }
 
 .text-about h2{
-  font-size: 60px;
+  font-size: 48px;
   font-family: var(--font-display);
   font-weight: 400;
   margin: 0 0 24px;
