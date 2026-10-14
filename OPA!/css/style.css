@@ -338,12 +338,11 @@ footer {
 /* About-us- siden */
 
 .Split-section {
-    min-height:700px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
     overflow: hidden;           /* ingenting får renne ut */
-    height: 700px
+    height: calc(100vh - 95px - 162px);
     min-height: 400px;
     color: var(--dark-blue);
 }
