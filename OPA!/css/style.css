@@ -551,10 +551,10 @@ footer {
  
 /* den store boksen med blå border*/
 .card {
-  width: 505px;
+  width: 506px;
   max-width: 100%;
   border: 3px solid var(--dark-blue);
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 24px;
   text-align: center;
 }
