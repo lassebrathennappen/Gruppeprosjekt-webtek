@@ -28,5 +28,115 @@
             </ul>
         </nav>
     </header>
+    <-- Gir teksten som lese opp av skjermleser -->
+    <main class="reservation">
+       <h1 class="visually-hidden">Book a table at OPA!</h1>
+
+        <!-- Venstre kolonne: det brukeren har valgt så langt -->
+        <aside class="summary" id="summary" aria-label="Your booking so far" hidden>
+
+            <div class="summary-box" id="summary-guests" hidden>
+                <span class="summary-label">Guests</span>
+                <span class="summary-value" id="value-guests"></span>
+                <button type="button" class="edit-btn" data-step="guests" aria-label="Change number of guests">
+                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                </button>
+            </div>
+
+            <div class="summary-box" id="summary-date" hidden>
+                <span class="summary-label">Date</span>
+                <span class="summary-value" id="value-date"></span>
+                <button type="button" class="edit-btn" data-step="date" aria-label="Change date">
+                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                </button>
+            </div>
+
+            <div class="summary-box" id="summary-time" hidden>
+                <span class="summary-label">Time</span>
+                <span class="summary-value" id="value-time"></span>
+                <button type="button" class="edit-btn" data-step="time" aria-label="Change time">
+                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Steg 1: Gjester -->
+        <section class="step" id="step-guests">
+            <div class="card">
+                <h2 tabindex="-1">How many people?</h2>
+                <div class="guest-grid">
+                    <button type="button" class="guest-btn" data-guests="1" aria-pressed="false">1</button>
+                    <button type="button" class="guest-btn" data-guests="2" aria-pressed="false">2</button>
+                    <button type="button" class="guest-btn" data-guests="3" aria-pressed="false">3</button>
+                    <button type="button" class="guest-btn" data-guests="4" aria-pressed="false">4</button>
+                    <button type="button" class="guest-btn" data-guests="5" aria-pressed="false">5</button>
+                    <button type="button" class="guest-btn" data-guests="6" aria-pressed="false">6</button>
+                    <button type="button" class="guest-btn" data-guests="7" aria-pressed="false">7</button>
+                    <button type="button" class="guest-btn" data-guests="8" aria-pressed="false">8</button>
+                </div>
+            </div>
+            <button type="button" class="next-btn" id="next-guests" hidden>Next</button>
+        </section>
+
+        <!-- Steg 2: Dato -->
+        <section class="step" id="step-date" hidden>
+            <div class="card">
+                <h2 tabindex="-1">Pick a date</h2>
+                <!-- TODO Marte S: Dynamisk kalender -->
+                <p class="month-name" id="month-name"></p>
+                <div class="calendar-row">
+                    <button type="button" class="arrow-btn" id="prev-month" aria-label="Previous month">&#8249;</button>
+                    <div class="calendar-grid" id="calendar-grid"></div>
+                    <button type="button" class="arrow-btn" id="next-month" aria-label="Next month">&#8250;</button>
+                </div>
+            </div>
+            <button type="button" class="next-btn" id="next-date" hidden>Next</button>
+        </section>
+
+        <!-- Steg 3: Tid -->
+        <section class="step" id="step-time" hidden>
+            <div class="card">
+                <h2 tabindex="-1">Pick a time</h2>
+                <div class="time-grid" id="time-grid"></div>
+            </div>
+            <button type="button" class="next-btn" id="next-time" hidden>Next</button>
+        </section>
+
+        <!-- Steg 4: Kontaktinfo -->
+        <section class="step" id="step-contact" hidden>
+            <form id="contact-form" class="contact-form">
+                <div class="card card-form">
+                    <h2 tabindex="-1">Fill out contact info</h2>
+
+                    <label for="email">Email<span class="star" aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com">
+
+                    <label for="first-name">Name<span class="star" aria-hidden="true">*</span></label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Name">
+
+                    <label for="last-name">Lastname</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Lastname">
+
+                    <label for="comments">Comments</label>
+                    <input type="text" id="comments" name="comments" placeholder="Add comments to the booking">
+
+                    <p class="required-text">*Required</p>
+                    <!-- TODO Marte K: feilmeldinger for navn og email -->
+                </div>
+                <button type="submit" class="next-btn">Next</button>
+            </form>
+        </section>
+
+        <!-- Steg 5: Takk for bookingen -->
+        <section class="step" id="step-thanks" hidden>
+            <div class="card card-wide">
+                <h2 tabindex="-1">Thank you for your booking!</h2>
+                <p class="thanks-text">
+                    We are excited to have you at OPA!<br>
+                    Booking details are sent to <strong id="thanks-email"></strong>
+                </p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
