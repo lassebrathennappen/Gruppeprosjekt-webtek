@@ -28,5 +28,87 @@
             </ul>
         </nav>
     </header>
+     <main class="event-page">
+        <!-- Blått banner med navnet på eventet (samme som på forsiden) -->
+        <section class="banner">
+            <h1>Grill-fever Friday's!</h1>
+        </section>
+ 
+        <!-- Tekst om eventet til venstre, bilde til høyre (samme oppsett som welcome på forsiden) -->
+        <section class="welcome">
+            <div class="welcome-text event-text">
+                <h2>Great deals on greek grill food every Friday!</h2>
+                <p>
+                    We invite you to come to Grill-fever Friday's at OPA! between 15:00 and 17:30
+                    for a 20% discount on our exclusive grill menu! <strong>Special Grill menu</strong>
+                    is also available on Saturdays and Sundays during opening hours, without the discount.
+                </p>
+            </div>
+            <img src="images/grill.jpg" alt="Long skewers of marinated meat turning over glowing charcoal on a large outdoor grill, with smoke rising against an old stone wall. Rustic, smoky and festive, like a Greek grill party.">
+        </section>
+ 
+        <!-- oliven stripe med aria-hidden for accessibility -->
+        <div class="divider" aria-hidden="true">
+        </div>
+ 
+        <!-- Bilde til venstre, grillmenyen til høyre (samme oppsett som location på forsiden) -->
+        <section class="location">
+            <img src="images/grilledoctopus.jpg" alt="Close-up of charred, glazed grilled octopus tentacles topped with chopped fresh herbs and capers. Smoky, juicy and full of flavour.">
+ 
+            <div class="event-dishes">
+                <h2 class="visually-hidden">Grill menu</h2>
+                <!-- Bruker samme klasser som menysiden (dish, dish-desc, dish-price) -->
+                <ul class="dish-list">
+                    <li class="dish">
+                        <h3>Smoky Bifteki Sliders</h3>
+                        <p class="dish-desc">Beef and lamb patties stuffed with feta, brioche buns, charred tomato relish, rocket, pickled cucumber, oregano mayo</p>
+                        <p class="dish-price">XXX KR</p>
+                    </li>
+                    <li class="dish">
+                        <h3>Lamb Chops with Salsa Verde Greco</h3>
+                        <p class="dish-desc">Grilled lamb cutlets, garlic-lemon marinade, parsley, dill, capers, kalamata olives, olive oil, charred lemon halves</p>
+                        <p class="dish-price">XXX KR</p>
+                    </li>
+                    <li class="dish">
+                        <h3>Loukaniko Hot Dogs</h3>
+                        <p class="dish-desc">Grilled Greek pork sausage with orange peel and fennel, toasted pita roll, spicy tirokafteri, caramelised onions, crispy fried shallots</p>
+                        <p class="dish-price">XXX KR</p>
+                    </li>
+                    <li class="dish">
+                        <h3>Honey-Glazed Halloumi Skewers</h3>
+                        <p class="dish-desc">Grilled halloumi, watermelon cubes, red onion, thyme honey glaze, mint, pomegranate seeds, lime zest</p>
+                        <p class="dish-price">XXX KR</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+ 
+    <footer>
+      <div class="footer-logo">
+          <a href="index.html" class="logo">OPA!</a>
+          <p>EST. 2026</p>
+     </div>
+      <div class="footer-info">
+          <div class="footer-col">
+              <h2>Opening hours</h2>
+              <p>Tuesday–Thursday:<br>15–22</p>
+              <p>Friday and Saturday:<br>13–22</p>
+          </div>
+          <div class="footer-col">
+              <h2>Location</h2>
+              <address>
+                  <a href="https://maps.google.com/?q=Munkegata+1,+7011+Trondheim">Munkegata 1, 7011 Trondheim</a>
+              </address>
+              <p>Wheelchair accessible</p>
+          </div>
+          <div class="footer-col">
+              <h2>Contact</h2>
+              <p><a href="mailto:example@email.com">example@email.com</a></p>
+              <p><a href="tel:+4712345678">+47 123 45 678</a></p>
+              p><a href="#">Instagram</a></p>
+          </div>
+      </div>
+    </footer>
 </body>
 </html>
