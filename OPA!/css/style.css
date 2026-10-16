@@ -498,4 +498,330 @@ footer {
 }
 
 
+/*---------------------------------------------------------------------------------------------------------------------*/
+ 
+/* reservasjonssiden (reservations.html) */
+ 
+/* oppsett for hele main på reservasjonssiden */
+.reservation {
+  display: flex; /*boksene står ved siden av hverandre*/
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /*space mellom venstre og høyre kolonne*/
+  padding: 105px 16px 60px;
+  color: var(--off-black);
+}
+ 
+.reservation *,
+.reservation *::before,
+.reservation *::after {
+  box-sizing: border-box; /* rammen regnes inni bredden*/
+}
+ 
+.reservation h2,
+.reservation p {
+  margin: 0; /* fjerner standardavstanden*/
+}
+ 
+/* tydelig ramme rundt knapper og felt når man bruker tastatur*/
+.reservation button:focus-visible,
+.reservation input:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+ 
+.reservation h2:focus {
+  outline: none; /* overskriften får fokus fra JS, men skal ikke ha ramme*/
+}
+ 
+/* hvert steg i reservasjonen*/
+.step {
+  display: flex;
+  flex-direction: column; /*boksen og "Next" under hverandre*/
+  align-items: center;
+}
+ 
+/* skjuler det som ikke skal vises enda*/
+.step[hidden],
+.summary[hidden],
+.summary-box[hidden],
+.next-btn[hidden] {
+  display: none;
+}
+ 
+/* den store boksen med blå border*/
+.card {
+  width: 505px;
+  max-width: 100%;
+  border: 3px solid var(--dark-blue);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+}
+ 
+.card h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+ 
+/* "Next" som ser ut som en lenke*/
+.next-btn {
+  background: none;
+  border: none;
+  color: var(--off-black);
+  font-family: var(--font-body);
+  font-size: 24px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 32px;
+  cursor: pointer;
+}
+ 
+ 
+/* venstre kolonne: det brukeren har valgt så langt*/
+.summary {
+  width: 505px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; /*boksene under hverandre*/
+  gap: 40px;
+}
+ 
+.summary-box {
+  height: 80px;
+  border: 3px solid var(--dark-blue);
+  border-radius: 20px;
+  display: flex; /*tekst, verdi og blyant på en rad*/
+  align-items: center;
+  padding: 0 27px;
+  font-size: 24px;
+}
+ 
+.summary-label {
+  flex: 1; /*dytter verdien og blyanten til høyre*/
+}
+ 
+.summary-value {
+  margin-right: 30px;
+}
+ 
+/* blyant-knappen for å endre et valg*/
+.edit-btn {
+  background: none;
+  border: none;
+  color: var(--dark-blue);
+  display: flex;
+  cursor: pointer;
+}
+ 
+ 
+/* steg 1: antall gjester*/
+.guest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 71px); /*4 knapper på hver rad*/
+  gap: 10px;
+  justify-content: center;
+}
+ 
+.guest-btn {
+  width: 71px;
+  height: 71px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 32px;
+  cursor: pointer;
+}
+ 
+/* knappene blir litt lysere ved hover*/
+.guest-btn:hover,
+.time-btn:not(:disabled):hover {
+  filter: brightness(1.25);
+}
+ 
+/* valgt knapp blir oransje (responsiv komponent 4)*/
+.guest-btn[aria-pressed="true"],
+.day[aria-pressed="true"],
+.time-btn[aria-pressed="true"] {
+  background-color: var(--orange);
+}
+ 
+ 
+/* steg 2: kalender*/
+/* TODO Marte S: styling for kalenderen
+   (.month-name, .calendar-row, .arrow-btn, .calendar-grid, .day)
+   Oransje valgt dag er allerede fikset over. */
+ 
+ 
+/* steg 3: tidspunkt*/
+.card #time-grid {
+  margin-top: -14px;
+}
+ 
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 206px); /*2 knapper på hver rad*/
+  gap: 41px 40px;
+  justify-content: center;
+}
+ 
+.time-btn {
+  height: 58px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 32px;
+  cursor: pointer;
+}
+ 
+/* opptatte tidspunkt er grå og kan ikke velges*/
+.time-btn:disabled {
+  background-color: var(--grey);
+  color: var(--off-black);
+  cursor: not-allowed;
+}
+ 
+/* siste knapp (20:00-22:00) står alene i midten*/
+.time-btn:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 206px;
+}
+ 
+ 
+/* steg 4: kontaktinfo*/
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.card-form {
+  text-align: left;
+  padding: 24px 58px;
+}
+ 
+.card-form h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+ 
+.card-form label {
+  display: block; /*label over feltet*/
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+ 
+/* oransje stjerne for påkrevde felt*/
+.star {
+  color: var(--orange);
+}
+ 
+/* de grå feltene man skriver i*/
+.card-form input {
+  display: block;
+  width: 381px;
+  max-width: 100%;
+  height: 49px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--grey);
+  padding: 0 20px;
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--off-black);
+  margin-bottom: 26px;
+}
+ 
+/* eksempelteksten i feltene*/
+.card-form input::placeholder {
+  color: var(--off-black);
+  font-style: italic;
+}
+ 
+.required-text {
+  color: var(--orange);
+  font-style: italic;
+  font-size: 24px;
+  margin-top: -6px;
+}
+ 
+ 
+/* steg 5: takk for bestillingen*/
+.card-wide {
+  width: 777px;
+}
+ 
+.card-wide h2 {
+  margin-bottom: 36px;
+}
+ 
+.thanks-text {
+  font-size: 24px;
+  line-height: 1.25;
+  padding-bottom: 20px;
+}
+ 
+ 
+/* mindre skjermer (nettbrett)*/
+@media (max-width: 1100px) {
+  .reservation {
+    flex-direction: column; /*venstre kolonne havner over boksen*/
+    align-items: center;
+    padding-top: 40px;
+  }
+ 
+  .summary {
+    gap: 16px;
+  }
+}
+ 
+/* mobil*/
+@media (max-width: 600px) {
+  .card h2 {
+    font-size: 30px;
+  }
+ 
+  .guest-grid {
+    grid-template-columns: repeat(4, 60px);
+  }
+ 
+  .guest-btn {
+    width: 60px;
+    height: 60px;
+  }
+ 
+  .time-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+ 
+  .time-btn {
+    font-size: 20px;
+  }
+ 
+  .time-btn:last-child:nth-child(odd) {
+    width: 50%;
+  }
+ 
+  .card-form {
+    padding: 24px;
+  }
+ 
+  .card-form label {
+    font-size: 24px;
+  }
+ 
+  .card-form input {
+    font-size: 18px;
+  }
+}
+ 
+
+
+
 
