@@ -820,6 +820,72 @@ footer {
     font-size: 18px;
   }
 }
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+ 
+/* event-siden (events.html) */
+/* bruker .banner, .welcome, .divider og .location fra forsiden, og .dish fra menysiden.
+   her endres bare det som er annerledes på event-siden*/
+ 
+/* banneret er litt lavere på event-siden*/
+.event-page .banner {
+  height: 147px;
+}
+ 
+/* tekst + grillbilde*/
+.event-page .welcome {
+  height: auto; /*boksen vokser hvis teksten trenger mer plass*/
+  min-height: 782px;
+}
+ 
+.event-page .welcome-text {
+  padding: 0 60px; /*teksten står nærmere kanten enn på forsiden*/
+}
+ 
+.event-page .welcome-text p {
+  font-size: 24px; /*mindre tekst enn på forsiden*/
+  max-width: 570px;
+  margin-left: 13px;
+  padding: 40px 0; /*luft over og under hvis teksten blir lang*/
+}
+ 
+ 
+/* bilde + grillmeny*/
+.event-page .location {
+  height: auto; /*boksen vokser hvis menyen trenger mer plass*/
+  min-height: 1137px;
+  color: var(--off-black);
+}
+ 
+/* bildene fyller høyden uten å gjøre boksen høyere*/
+.event-page .welcome img,
+.event-page .location img {
+  contain: size;
+}
+ 
+/* kolonnen med rettene*/
+.event-dishes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*rettene midt i høyden*/
+  padding: 40px 24px 40px 180px;
+}
+ 
+/* rettene står under hverandre (ikke i to kolonner som på menysiden)*/
+.event-dishes .dish-list {
+  grid-template-columns: 1fr;
+  gap: 50px;
+  max-width: 410px;
+}
+ 
+.event-dishes .dish h3 {
+  margin-bottom: 25px;
+}
+ 
+.event-dishes .dish-desc {
+  margin-bottom: 23px;
+}
  
 
 
