@@ -362,9 +362,9 @@ footer {
 .text-about{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding: 80px;
+  padding: 180px 100px 80px 100px;
 }
 
 .text-about h2{
