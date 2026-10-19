@@ -911,10 +911,11 @@ footer {
 .contact-text p {
   align-self: stretch;
   margin: 0 0 16;          /* fjerner den skjulte standardavstanden */
-  font-family: var(--font-display);
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.5;
+  font-family: var(--font-body);
+  max-width: 570px;
 }
 
 .contact-text address {
