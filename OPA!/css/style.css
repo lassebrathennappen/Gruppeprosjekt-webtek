@@ -933,6 +933,11 @@ footer {
   object-fit: cover;
 }
 
+section.contact {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+}
+
 
 
  
