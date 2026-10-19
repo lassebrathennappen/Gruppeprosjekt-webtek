@@ -344,8 +344,13 @@ footer {
     overflow: hidden;           /* ingenting får renne ut */
     color: var(--dark-blue);
     height: auto; /*boksen vokser hvis teksten trenger mer plass*/
-    min-height: 782px;
+    min-height: 767px;
 }
+.image-about {
+  width: 100%;
+  height: 100%;
+}
+
 .image-about img {
   display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
@@ -357,7 +362,7 @@ footer {
 .text-about{
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
   padding: 180px 100px 80px 100px;
 }
