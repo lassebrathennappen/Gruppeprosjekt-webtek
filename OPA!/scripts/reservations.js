@@ -149,7 +149,34 @@ document.getElementById("contact-form").addEventListener("submit", function (eve
        TODO Marte K – Skjemavalidering (JavaScript 3)
        Sjekk navn og e-post her og vis feilmeldinger.
        ===================================================== */
+// Viser en feilmelding rett under feltet
+function showError(input, message) {
+    let error = document.getElementById(input.id + "-error");
+    if (!error) {
+        error = document.createElement("p");
+        error.id = input.id + "-error";
+        error.className = "error-message";
+        input.insertAdjacentElement("afterend", error);
+    }
+    error.textContent = message;
+    input.setAttribute("aria-invalid", "true");
+    input.setAttribute("aria-describedby", error.id);
+}
+
+// Fjerner feilmeldingen igjen
+function clearError(input) {
+    const error = document.getElementById(input.id + "-error");
+    if (error) error.textContent = "";
+    input.removeAttribute("aria-invalid");
+}
+
+// Enkel sjekk: tekst@tekst.tekst
+function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+}
  
+
+   
     // Viser e-posten på takkesiden
     const email = document.getElementById("email").value;
     document.getElementById("thanks-email").textContent = email;
@@ -164,3 +191,5 @@ document.querySelectorAll(".edit-btn").forEach(function (btn) {
         showStep(step);
     });
 });
+
+
