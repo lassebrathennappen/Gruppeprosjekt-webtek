@@ -899,7 +899,7 @@ footer {
   min-height: 600px;
 }
 
-.location img {
+.contact img {
   display: block;
   width: 100%;
   height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
