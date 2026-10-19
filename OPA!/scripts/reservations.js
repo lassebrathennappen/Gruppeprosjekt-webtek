@@ -145,10 +145,8 @@ document.getElementById("next-time").addEventListener("click", function () {
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault(); // hindrer at siden lastes på nytt
  
-    /* =====================================================
-       TODO Marte K – Skjemavalidering (JavaScript 3)
-       Sjekk navn og e-post her og vis feilmeldinger.
-       ===================================================== */
+   
+/* ======= Sjekk navn og e-post her og vis feilmeldinger. ================ */
 // Viser en feilmelding rett under feltet
 function showError(input, message) {
     let error = document.getElementById(input.id + "-error");
