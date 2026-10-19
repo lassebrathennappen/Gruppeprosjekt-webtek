@@ -890,31 +890,7 @@ footer {
 
 <!-- Contact us -->
 
-.contact {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;   /* samme her */
-  overflow: hidden;
-  background-color: var(--off-white);
-  height: 100vh;
-  min-height: 600px;
-}
 
-.location img {
-  display: block;
-  width: 100%;
-  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
-  object-fit: cover;
-}
-
-.contact-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;        
-  padding: 0 70px;
-}
 
 
  
