@@ -343,8 +343,8 @@ footer {
     grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
     overflow: hidden;           /* ingenting får renne ut */
     color: var(--dark-blue);
-    height: auto; /*boksen vokser hvis teksten trenger mer plass*/
-    min-height: 767px;
+    height: 100vh;
+    min-height: 600px;
 }
 .image-about {
   width: 100%;
@@ -354,7 +354,7 @@ footer {
 .image-about img {
   display: block;  /* fjerner den lille luka under bilder */
   width: 100%;
-  height: 80%;        /* fyller hele 767px */
+  height: 100%;        /* fyller hele 767px */
   object-fit: cover;   /* beskjærer i stedet for å strekke */
   object-position: center;
 }
