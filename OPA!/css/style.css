@@ -899,21 +899,22 @@ footer {
   min-height: 600px;
 }
 
-.conatct-text {
+.contact-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;        
+  gap: 24px;        
   padding: 0 70px;
 }
 
 .contact-text p {
   align-self: stretch;
-  margin: 0;          /* fjerner den skjulte standardavstanden */
+  margin: 0 0 16;          /* fjerner den skjulte standardavstanden */
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 400;
+  line-height: 1.25;
 }
 
 .contact-text address {
