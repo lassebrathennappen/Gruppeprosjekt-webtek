@@ -899,13 +899,6 @@ footer {
   min-height: 600px;
 }
 
-.contact img {
-  display: block;
-  width: 100%;
-  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
-  object-fit: cover;
-}
-
 .conatct-text {
   display: flex;
   flex-direction: column;
@@ -931,6 +924,14 @@ footer {
 .contact-text address a {
   color: var(--dark-blue);
 }
+
+.contact img {
+  display: block;
+  width: 100%;
+  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
+  object-fit: cover;
+}
+
 
 
  
