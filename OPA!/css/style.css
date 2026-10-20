@@ -507,7 +507,7 @@ footer {
   display: flex; /*boksene står ved siden av hverandre*/
   justify-content: center;
   align-items: flex-start;
-  gap: 40px; /*space mellom venstre og høyre kolonne*/
+  gap: 40px; /*avstand mellom venstre og høyre kolonne*/
   padding: 105px 16px 60px;
   color: var(--off-black);
 }
@@ -549,7 +549,7 @@ footer {
   display: none;
 }
  
-/* den store boksen med blå border*/
+/* den store boksen med blå kant*/
 .card {
   width: 506px;
   max-width: 100%;
@@ -581,20 +581,20 @@ footer {
  
 /* venstre kolonne: det brukeren har valgt så langt*/
 .summary {
-  width: 505px;
+  width: 506px;
   max-width: 100%;
   display: flex;
   flex-direction: column; /*boksene under hverandre*/
-  gap: 40px;
+  gap: 39px;
 }
  
 .summary-box {
-  height: 80px;
+  height: 81px;
   border: 3px solid var(--dark-blue);
-  border-radius: 20px;
+  border-radius: 24px;
   display: flex; /*tekst, verdi og blyant på en rad*/
   align-items: center;
-  padding: 0 27px;
+  padding: 0 24px;
   font-size: 24px;
 }
  
@@ -603,13 +603,19 @@ footer {
 }
  
 .summary-value {
-  margin-right: 30px;
+  margin-right: 28px;
+}
+ 
+/* tallet for gjester*/
+#value-guests {
+  margin-right: 41px;
 }
  
 /* blyant-knappen for å endre et valg*/
 .edit-btn {
   background: none;
   border: none;
+  padding: 0;
   color: var(--dark-blue);
   display: flex;
   cursor: pointer;
@@ -635,13 +641,13 @@ footer {
   cursor: pointer;
 }
  
-/* knappene blir litt lysere ved hover*/
+/* knappene blir litt lysere når musen holdes over*/
 .guest-btn:hover,
-.time-btn:not(:disabled):hover {
+.time-btn:hover {
   filter: brightness(1.25);
 }
  
-/* valgt knapp blir oransje (responsiv komponent 4)*/
+/* valgt knapp blir oransj (responsiv komponent 4)*/
 .guest-btn[aria-pressed="true"],
 .day[aria-pressed="true"],
 .time-btn[aria-pressed="true"] {
@@ -650,25 +656,109 @@ footer {
  
  
 /* steg 2: kalender*/
-/* TODO Marte S: styling for kalenderen
-   (.month-name, .calendar-row, .arrow-btn, .calendar-grid, .day)
-   Oransje valgt dag er allerede fikset over. */
+/* navnet på måneden*/
+.card .month-name {
+  font-size: 24px;
+  margin: -14px 0 10px;
+}
+ 
+/* pilene og kalenderen på en rad*/
+.calendar-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+ 
+/* pilene for å bytte måned*/
+.arrow-btn {
+  background: none;
+  border: none;
+  color: var(--off-black);
+  font-family: var(--font-body);
+  font-size: 32px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+ 
+/* skjuler pilen tilbake når man er på denne måneden*/
+.arrow-btn:disabled {
+  visibility: hidden;
+}
+ 
+/* 7 kolonner, en for hver ukedag*/
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  column-gap: 13px;
+  row-gap: 11px;
+}
+ 
+/* ukedagene og dagene fra andre måneder*/
+.weekday,
+.other-month {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+ 
+.other-month {
+  color: #555555;
+}
+ 
+/* ledige dager er blå*/
+.day {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 20px;
+  cursor: pointer;
+}
+ 
+.day:not(:disabled):hover {
+  filter: brightness(1.25);
+}
+ 
+/* dager som ikke kan velges er grå*/
+.day:disabled {
+  background-color: var(--grey);
+  color: var(--off-black);
+  cursor: not-allowed;
+}
+ 
+/* dagens dato får en oransje ramme*/
+.day.today {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
  
  
 /* steg 3: tidspunkt*/
+/* boksene for tid og kontaktinfo er 1px smalere i Figma*/
+#step-time .card,
+#step-contact .card {
+  width: 505px;
+}
+ 
 .card #time-grid {
-  margin-top: -14px;
+  margin-top: -17px;
 }
  
 .time-grid {
   display: grid;
   grid-template-columns: repeat(2, 206px); /*2 knapper på hver rad*/
-  gap: 41px 40px;
+  gap: 40px;
   justify-content: center;
 }
  
 .time-btn {
-  height: 58px;
+  height: 59px;
   border: none;
   border-radius: 20px;
   background-color: var(--dark-blue);
@@ -676,13 +766,6 @@ footer {
   font-family: var(--font-body);
   font-size: 32px;
   cursor: pointer;
-}
- 
-/* opptatte tidspunkt er grå og kan ikke velges*/
-.time-btn:disabled {
-  background-color: var(--grey);
-  color: var(--off-black);
-  cursor: not-allowed;
 }
  
 /* siste knapp (20:00-22:00) står alene i midten*/
@@ -702,7 +785,7 @@ footer {
  
 .card-form {
   text-align: left;
-  padding: 24px 58px;
+  padding: 24px 58px 23px;
 }
  
 .card-form h2 {
@@ -713,7 +796,7 @@ footer {
 .card-form label {
   display: block; /*label over feltet*/
   font-size: 32px;
-  margin-bottom: 18px;
+  margin-bottom: 22px;
 }
  
 /* oransje stjerne for påkrevde felt*/
@@ -734,7 +817,7 @@ footer {
   font-family: var(--font-body);
   font-size: 24px;
   color: var(--off-black);
-  margin-bottom: 26px;
+  margin-bottom: 25px;
 }
  
 /* eksempelteksten i feltene*/
@@ -743,11 +826,23 @@ footer {
   font-style: italic;
 }
  
+/* feilmelding under feltet (skjemavalidering)*/
+.card-form .error-text {
+  color: var(--orange);
+  font-size: 18px;
+  margin: -17px 0 14px 20px;
+}
+ 
+/* rød ramme rundt feltet som er feil*/
+.card-form input[aria-invalid="true"] {
+  outline: 2px solid var(--orange);
+}
+ 
 .required-text {
   color: var(--orange);
   font-style: italic;
   font-size: 24px;
-  margin-top: -6px;
+  margin-top: -2px;
 }
  
  
@@ -763,7 +858,7 @@ footer {
 .thanks-text {
   font-size: 24px;
   line-height: 1.25;
-  padding-bottom: 20px;
+  padding-bottom: 21px;
 }
  
  
