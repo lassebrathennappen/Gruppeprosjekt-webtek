@@ -31,37 +31,37 @@
     <!-- Gir teksten som lese opp av skjermleser -->
     </header>
     <main class="reservation">
-       <h1 class="visually-hidden">Book a table at OPA!</h1>
-
+        <h1 class="visually-hidden">Book a table at OPA!</h1>
+ 
         <!-- Venstre kolonne: det brukeren har valgt så langt -->
         <aside class="summary" id="summary" aria-label="Your booking so far" hidden>
-
+ 
             <div class="summary-box" id="summary-guests" hidden>
                 <span class="summary-label">Guests</span>
                 <span class="summary-value" id="value-guests"></span>
                 <button type="button" class="edit-btn" data-step="guests" aria-label="Change number of guests">
-                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                    <svg width="34" height="34" viewBox="0 0 1024 1024" aria-hidden="true"><path fill="currentColor" d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32m-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9"/></svg>
                 </button>
             </div>
-
+ 
             <div class="summary-box" id="summary-date" hidden>
                 <span class="summary-label">Date</span>
                 <span class="summary-value" id="value-date"></span>
                 <button type="button" class="edit-btn" data-step="date" aria-label="Change date">
-                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                    <svg width="34" height="34" viewBox="0 0 1024 1024" aria-hidden="true"><path fill="currentColor" d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32m-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9"/></svg>
                 </button>
             </div>
-
+ 
             <div class="summary-box" id="summary-time" hidden>
                 <span class="summary-label">Time</span>
                 <span class="summary-value" id="value-time"></span>
                 <button type="button" class="edit-btn" data-step="time" aria-label="Change time">
-                    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 16.5V19.5h3l9-9-3-3-9 9zm14.7-8.3a.8.8 0 0 0 0-1.1l-1.8-1.8a.8.8 0 0 0-1.1 0l-1.5 1.5 3 3 1.4-1.6z"/><rect x="3" y="21" width="18" height="1.6" fill="currentColor"/></svg>
+                    <svg width="34" height="34" viewBox="0 0 1024 1024" aria-hidden="true"><path fill="currentColor" d="M880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32m-622.3-84c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 0 0 0-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 0 0 9.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9"/></svg>
                 </button>
             </div>
         </aside>
-
-        <!-- Steg 1: Gjester -->
+ 
+        <!-- Steg 1: Antall gjester -->
         <section class="step" id="step-guests">
             <div class="card">
                 <h2 tabindex="-1">How many people?</h2>
@@ -78,12 +78,12 @@
             </div>
             <button type="button" class="next-btn" id="next-guests" hidden>Next</button>
         </section>
-
+ 
         <!-- Steg 2: Dato -->
         <section class="step" id="step-date" hidden>
             <div class="card">
                 <h2 tabindex="-1">Pick a date</h2>
-                <!-- TODO Marte S: Dynamisk kalender -->
+                <!-- Dynamisk kalender (fylles inn med JavaScript) -->
                 <p class="month-name" id="month-name"></p>
                 <div class="calendar-row">
                     <button type="button" class="arrow-btn" id="prev-month" aria-label="Previous month">&#8249;</button>
@@ -93,8 +93,8 @@
             </div>
             <button type="button" class="next-btn" id="next-date" hidden>Next</button>
         </section>
-
-        <!-- Steg 3: Tid -->
+ 
+        <!-- Steg 3: Tidspunkt -->
         <section class="step" id="step-time" hidden>
             <div class="card">
                 <h2 tabindex="-1">Pick a time</h2>
@@ -102,33 +102,35 @@
             </div>
             <button type="button" class="next-btn" id="next-time" hidden>Next</button>
         </section>
-
+ 
         <!-- Steg 4: Kontaktinfo -->
         <section class="step" id="step-contact" hidden>
-            <form id="contact-form" class="contact-form">
+            <form id="contact-form" class="contact-form" novalidate>
                 <div class="card card-form">
                     <h2 tabindex="-1">Fill out contact info</h2>
-
+ 
                     <label for="email">Email<span class="star" aria-hidden="true">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="example@gmail.com">
-
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" aria-describedby="email-error">
+                    <!-- Feilmelding vises her av JavaScript -->
+                    <p class="error-text" id="email-error" role="alert" hidden></p>
+ 
                     <label for="first-name">Name<span class="star" aria-hidden="true">*</span></label>
-                    <input type="text" id="first-name" name="first-name" placeholder="Name">
-
+                    <input type="text" id="first-name" name="first-name" placeholder="Name" aria-describedby="first-name-error">
+                    <p class="error-text" id="first-name-error" role="alert" hidden></p>
+ 
                     <label for="last-name">Lastname</label>
                     <input type="text" id="last-name" name="last-name" placeholder="Lastname">
-
+ 
                     <label for="comments">Comments</label>
                     <input type="text" id="comments" name="comments" placeholder="Add comments to the booking">
-
+ 
                     <p class="required-text">*Required</p>
-                    <!-- TODO Marte K: feilmeldinger for navn og email -->
                 </div>
                 <button type="submit" class="next-btn">Next</button>
             </form>
         </section>
-
-        <!-- Steg 5: Takk for bookingen -->
+ 
+        <!-- Steg 5: Takk for bestillingen -->
         <section class="step" id="step-thanks" hidden>
             <div class="card card-wide">
                 <h2 tabindex="-1">Thank you for your booking!</h2>
@@ -139,5 +141,14 @@
             </div>
         </section>
     </main>
+</body>
+</html>
+    
+              
+
+
+    
+             
+         
 </body>
 </html>
