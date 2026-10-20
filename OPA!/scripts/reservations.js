@@ -1,6 +1,7 @@
 /* =========================================================
    reservations.js – OPA!
    Reservasjonsflyt (Lasse): husker gjester, dato og tid
+   Dynamisk kalender (Marte S): gråer ut utilgjengelige datoer
    ========================================================= */
  
 // Alt brukeren har valgt så langt
@@ -53,7 +54,7 @@ function formatDate(date) {
     return day + ending + " of " + month;
 }
  
-// Gjør én knapp oransje og resten vanlige
+// Gjør én knapp oransj og resten vanlige
 function selectButton(clicked, allButtons) {
     allButtons.forEach(function (btn) {
         btn.setAttribute("aria-pressed", "false");
@@ -81,10 +82,120 @@ document.getElementById("next-guests").addEventListener("click", function () {
 /* ---------- STEG 2: Dato ---------- */
  
 /* =========================================================
-   TODO Marte S – Dynamisk kalender (JavaScript 4)
+   Dynamisk kalender (JavaScript 4)
+   Lager dagene i måneden og viser hvilke som er ledige,
+   hvilken som er i dag og hvilke som ikke kan velges.
    ========================================================= */
  
-// Lasse: når man trykker på en dag, huskes den og blir oransje
+// Dagens dato (uten klokkeslett, så vi kan sammenligne datoer)
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+ 
+// Måneden som vises nå (starter på denne måneden)
+let shownMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+ 
+// Gjør en dato om til tekst, f.eks. "2026-09-25"
+function toDateString(date) {
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return date.getFullYear() + "-" + month + "-" + day;
+}
+ 
+// Sjekker om en dag kan bookes
+function isAvailable(date) {
+    if (date < today) return false;          // dager som har vært
+    if (date.getDay() === 1) return false;   // stengt på mandager
+    return true;
+}
+ 
+// Lager en grå tallrute for dager i forrige eller neste måned
+function addOtherMonthDay(grid, number) {
+    const cell = document.createElement("span");
+    cell.className = "other-month";
+    cell.textContent = number;
+    cell.setAttribute("aria-hidden", "true"); // skjermleser hopper over disse
+    grid.appendChild(cell);
+}
+ 
+function buildCalendar() {
+    const grid = document.getElementById("calendar-grid");
+    grid.innerHTML = "";
+ 
+    const year = shownMonth.getFullYear();
+    const month = shownMonth.getMonth();
+ 
+    // Navnet på måneden, f.eks. "September"
+    document.getElementById("month-name").textContent =
+        shownMonth.toLocaleString("en-GB", { month: "long" });
+ 
+    // Ukedagene øverst
+    ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"].forEach(function (name) {
+        const cell = document.createElement("span");
+        cell.className = "weekday";
+        cell.textContent = name;
+        grid.appendChild(cell);
+    });
+ 
+    // Dager fra forrige måned, så den 1. havner på riktig ukedag (mandag = 0)
+    const firstWeekday = (new Date(year, month, 1).getDay() + 6) % 7;
+    const daysLastMonth = new Date(year, month, 0).getDate();
+    for (let i = firstWeekday; i > 0; i--) {
+        addOtherMonthDay(grid, daysLastMonth - i + 1);
+    }
+ 
+    // Alle dagene i måneden
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    for (let day = 1; day <= daysInMonth; day++) {
+        const date = new Date(year, month, day);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "day";
+        btn.textContent = day;
+        btn.dataset.date = toDateString(date);
+        btn.setAttribute("aria-label", formatDate(date));
+ 
+        // Dager som ikke kan velges blir grå og kan ikke trykkes
+        btn.disabled = !isAvailable(date);
+ 
+        // Dagens dato får en ekstra ramme
+        if (date.getTime() === today.getTime()) {
+            btn.classList.add("today");
+            btn.setAttribute("aria-current", "date");
+        }
+ 
+        // Viser valgt dato som oransje hvis man går tilbake til kalenderen
+        const chosen = booking.date && booking.date.getTime() === date.getTime();
+        btn.setAttribute("aria-pressed", chosen ? "true" : "false");
+ 
+        grid.appendChild(btn);
+    }
+ 
+    // Dager fra neste måned, så den siste raden blir full
+    const rest = (7 - ((firstWeekday + daysInMonth) % 7)) % 7;
+    for (let day = 1; day <= rest; day++) {
+        addOtherMonthDay(grid, day);
+    }
+ 
+    // Kan ikke gå tilbake til måneder som har vært
+    document.getElementById("prev-month").disabled =
+        year === today.getFullYear() && month === today.getMonth();
+}
+ 
+// Pilene bytter måned
+document.getElementById("prev-month").addEventListener("click", function () {
+    shownMonth.setMonth(shownMonth.getMonth() - 1);
+    buildCalendar();
+});
+ 
+document.getElementById("next-month").addEventListener("click", function () {
+    shownMonth.setMonth(shownMonth.getMonth() + 1);
+    buildCalendar();
+});
+ 
+// Lager kalenderen når siden lastes
+buildCalendar();
+ 
+// Når man trykker på en dag, huskes den og blir oransje
 document.getElementById("calendar-grid").addEventListener("click", function (event) {
     const btn = event.target.closest(".day");
     if (!btn || btn.disabled) return;
@@ -124,7 +235,6 @@ function buildTimes() {
         btn.type = "button";
         btn.className = "time-btn";
         btn.textContent = time;
-        btn.disabled = bookedTimes.includes(time); // opptatt = grå
         btn.setAttribute("aria-pressed", time === booking.time ? "true" : "false");
  
         btn.addEventListener("click", function () {
@@ -135,6 +245,9 @@ function buildTimes() {
  
         grid.appendChild(btn);
     });
+ 
+    // Viser "Next" hvis en tid allerede er valgt
+    document.getElementById("next-time").hidden = !booking.time;
 }
  
 document.getElementById("next-time").addEventListener("click", function () {
@@ -142,41 +255,73 @@ document.getElementById("next-time").addEventListener("click", function () {
 });
  
 /* ---------- STEG 4: Kontaktinfo ---------- */
+ 
+/* =========================================================
+   Skjemavalidering (JavaScript 3)
+   Viser feilmelding hvis navn eller e-post mangler eller er feil.
+   ========================================================= */
+ 
+// Viser eller fjerner feilmeldingen under et felt
+function showError(input, message) {
+    const error = document.getElementById(input.id + "-error");
+    error.textContent = message;
+    error.hidden = (message === "");
+    // Forteller skjermlesere om feltet er feil
+    input.setAttribute("aria-invalid", message === "" ? "false" : "true");
+}
+ 
+// Sjekker e-post og navn. Gir true hvis alt er riktig
+function validateForm() {
+    const email = document.getElementById("email");
+    const name = document.getElementById("first-name");
+    let firstWrong = null;
+ 
+    // E-post: må fylles ut og se ut som en e-post (noe@noe.noe)
+    const emailValue = email.value.trim();
+    if (emailValue === "") {
+        showError(email, "Please enter your email.");
+        firstWrong = firstWrong || email;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+        showError(email, "Please enter a valid email, for example name@gmail.com.");
+        firstWrong = firstWrong || email;
+    } else {
+        showError(email, "");
+    }
+ 
+    // Navn: må fylles ut
+    if (name.value.trim() === "") {
+        showError(name, "Please enter your name.");
+        firstWrong = firstWrong || name;
+    } else {
+        showError(name, "");
+    }
+ 
+    // Flytter markøren til det første feltet som er feil
+    if (firstWrong) {
+        firstWrong.focus();
+        return false;
+    }
+    return true;
+}
+ 
+// Fjerner feilmeldingen mens brukeren retter feltet
+["email", "first-name"].forEach(function (id) {
+    const input = document.getElementById(id);
+    input.addEventListener("input", function () {
+        if (input.getAttribute("aria-invalid") === "true" && input.value.trim() !== "") {
+            showError(input, "");
+        }
+    });
+});
+ 
 document.getElementById("contact-form").addEventListener("submit", function (event) {
     event.preventDefault(); // hindrer at siden lastes på nytt
  
-   
-/* ======= Sjekk navn og e-post her og vis feilmeldinger. ================ */
-// Viser en feilmelding rett under feltet
-function showError(input, message) {
-    let error = document.getElementById(input.id + "-error");
-    if (!error) {
-        error = document.createElement("p");
-        error.id = input.id + "-error";
-        error.className = "error-message";
-        input.insertAdjacentElement("afterend", error);
-    }
-    error.textContent = message;
-    input.setAttribute("aria-invalid", "true");
-    input.setAttribute("aria-describedby", error.id);
-}
-
-// Fjerner feilmeldingen igjen
-function clearError(input) {
-    const error = document.getElementById(input.id + "-error");
-    if (error) error.textContent = "";
-    input.removeAttribute("aria-invalid");
-}
-
-// Enkel sjekk: tekst@tekst.tekst
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-}
+    // Stopper hvis e-post eller navn er feil (skjemavalidering)
+    if (!validateForm()) return;
  
-
-   
     // Viser e-posten på takkesiden
-    const email = document.getElementById("email").value;
+    const email = document.getElementById("email").value.trim();
     document.getElementById("thanks-email").textContent = email;
     showStep("thanks");
 });
@@ -185,6 +330,7 @@ function isValidEmail(email) {
 document.querySelectorAll(".edit-btn").forEach(function (btn) {
     btn.addEventListener("click", function () {
         const step = btn.dataset.step;
+        if (step === "date") buildCalendar();
         if (step === "time") buildTimes();
         showStep(step);
     });
