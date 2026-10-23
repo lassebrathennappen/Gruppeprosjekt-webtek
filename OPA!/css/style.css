@@ -1034,7 +1034,41 @@ section.contact {
   grid-template-columns: 1fr 1fr;
 }
 
+/*---------------------------------------------------------------------------------------------------------------------*/
 
+/* responsivt: menysiden (menu.html) */
+
+/* nettbrett */
+@media (max-width: 768px) {
+  .banner + .quote { margin: 32px 0 48px; }
+  .reviews-light { padding: 0 30px; }
+
+  .menu-tabs { margin: 40px 24px 48px; }
+  .menu-tabs ul { gap: 8px 40px; }
+  .menu-tab { font-size: 24px; }
+
+  .menu-section { padding: 0 30px 60px; }
+  .dish-list { gap: 32px 40px; }
+  .dish h3 { font-size: 26px; }
+  .dish-desc,
+  .dish-price { font-size: 18px; }
+}
+
+/* mobil */
+@media (max-width: 576px) {
+  .banner + .quote { margin: 24px 0 32px; padding: 0 20px; }
+  .reviews-light { padding: 0 20px; }
+
+  .menu-tabs { margin: 32px 20px 40px; }
+  .menu-tabs ul { gap: 4px 20px; }
+  .menu-tab { font-size: 20px; padding: 6px 2px; }
+
+  .menu-section { padding: 0 20px 48px; }
+  .dish-list { grid-template-columns: 1fr; gap: 32px; }
+  .dish h3 { font-size: 24px; }
+  .dish-desc,
+  .dish-price { font-size: 16px; }
+}
 
  
 
