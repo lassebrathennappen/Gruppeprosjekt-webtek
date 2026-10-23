@@ -454,7 +454,8 @@ footer {
   text-underline-offset: 6px;
 }
 
-.menu-tab.active { /* valgt kategori */
+/* valgt kategori */
+.menu-tab.active {
   color: var(--orange);
 }
 
