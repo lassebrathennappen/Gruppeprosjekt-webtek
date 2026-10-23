@@ -1058,9 +1058,16 @@ section.contact {
 @media (max-width: 576px) {
   .banner + .quote { margin: 24px 0 32px; padding: 0 20px; }
   .reviews-light { padding: 0 20px; }
+  .review-images { grid-template-columns: 1fr; gap: 16px; }
+  .review-images img { aspect-ratio: 4 / 3; }
 
   .menu-tabs { margin: 32px 20px 40px; }
-  .menu-tabs ul { gap: 4px 20px; }
+  .menu-tabs ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    justify-items: center;
+  }
   .menu-tab { font-size: 20px; padding: 6px 2px; }
 
   .menu-section { padding: 0 20px 48px; }
