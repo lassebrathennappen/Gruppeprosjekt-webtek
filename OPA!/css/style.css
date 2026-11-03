@@ -2350,103 +2350,81 @@ section.contact {
 }
 
  
---------------------------------------------------------------------------------------------------------------------------------
-/* responsivt: forsiden (index.html) + header/footer på alle sider */
+/*--------------------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------------------------------------------------------------------------------------*/
 
-/* liten laptop: menyen får ikke plass med full avstand */
+/* responsivt: forsiden + header/footer på alle sider */
+
+/* liten laptop */
 @media (max-width: 1100px) {
-  .logo { font-size: 52px; }
-
-  nav ul { gap: 24px; }
-  nav a { font-size: 17px; }
-
-  .nav-button {
-    width: auto;
-    padding: 0 20px;
-  }
-
-  .welcome-text { padding: 0 60px; }
-}
-
-/* nettbrett */
-@media (max-width: 768px) {
-  /* header */
   header {
     height: auto;
     min-height: 80px;
     padding: 12px 24px;
+    gap: 16px;
   }
 
-  .logo { font-size: 48px; }
+  .logo { font-size: 52px; }
 
-  nav ul { gap: 24px; }
-  nav a { font-size: 16px; }
+  nav ul { gap: 20px; }
+
+  nav a {
+    font-size: 17px;
+    white-space: nowrap; /*"ABOUT US" brekker ikke over to linjer*/
+  }
 
   .nav-button {
     width: auto;
-    height: 40px;
+    height: 44px;
     padding: 0 20px;
   }
 
-  /* banner */
+  .banner {
+    height: auto;
+    min-height: 120px;
+    padding: 32px 24px;
+  }
+
   .banner h1 {
-    font-size: 36px;
+    font-size: 40px;
     text-align: center;
-    padding: 0 24px;
   }
 
-  /* welcome */
-  .welcome-text { padding: 0 40px; }
-  .welcome-text h2 { font-size: 36px; }
-  .welcome-text p { font-size: 26px; }
+  /* ingen fast høyde lenger: boksen vokser med teksten */
+  .welcome,
+  .location {
+    height: auto;
+    min-height: 500px;
+    grid-template-rows: auto;
+  }
 
-  /* location */
+  /* bildet fyller høyden, men bestemmer den ikke (samme triks som event-siden) */
+  .welcome img,
+  .location img {
+    contain: size;
+  }
+
+  .welcome-text { padding: 60px 50px; }
+  .welcome-text h2 { font-size: 40px; }
+  .welcome-text p { font-size: 28px; }
+
   .location-text {
-    gap: 24px;
-    padding: 0 30px;
+    padding: 60px 40px;
+    gap: 28px;
   }
-  .location-text h2 { font-size: 32px; }
-  .location-text address { font-size: 20px; }
-
-  .pillbutton {
-    width: 220px;
-    font-size: 20px;
-  }
-
-  /* reviews */
-  .reviews { padding: 60px 30px; }
-  .quote { margin-bottom: 48px; }
-  .quote blockquote p { font-size: 36px; }
-  .quote figcaption { font-size: 20px; }
-
-  .review-images {
-    grid-template-columns: repeat(2, 1fr); /*2 bilder på hver rad*/
-    gap: 24px;
-  }
-
-  /* footer: logo over infoen */
-  footer {
-    flex-direction: column;
-    gap: 48px;
-    padding: 60px 30px;
-  }
-
-  .footer-logo .logo { font-size: 72px; }
-
-  .footer-info { gap: 40px; }
-  .footer-col { text-align: center; }
+  .location-text h2 { font-size: 36px; }
 }
 
-/* mobil */
-@media (max-width: 576px) {
-  /* header: logo over menyen, lenkene brytes på flere linjer */
+/* nettbrett */
+@media (max-width: 768px) {
+  /* header: logo over menyen */
   header {
     flex-direction: column;
-    gap: 12px;
     padding: 16px 20px;
+    gap: 12px;
   }
 
-  .logo { font-size: 40px; }
+  .logo { font-size: 44px; }
 
   nav ul {
     flex-wrap: wrap;
@@ -2454,58 +2432,84 @@ section.contact {
     gap: 12px 20px;
   }
 
-  /* banner */
-  .banner {
-    height: auto;
-    padding: 32px 20px;
-  }
-  .banner h1 { font-size: 28px; }
+  nav a { font-size: 16px; }
 
-  /* welcome + location: bilde og tekst under hverandre */
+  .banner h1 { font-size: 32px; }
+
+  .welcome-text { padding: 40px 30px; }
+  .welcome-text h2 { font-size: 32px; }
+  .welcome-text p { font-size: 22px; }
+
+  .location-text { padding: 40px 24px; gap: 20px; }
+  .location-text h2 { font-size: 28px; }
+  .location-text address { font-size: 18px; }
+
+  .pillbutton {
+    width: 100%;
+    max-width: 245px;
+    font-size: 18px;
+  }
+
+  .reviews { padding: 60px 30px; }
+  .quote { margin-bottom: 48px; }
+  .quote blockquote p { font-size: 32px; }
+  .quote figcaption { font-size: 20px; }
+
+  .review-images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 48px;
+    padding: 60px 30px;
+  }
+
+  .footer-logo .logo { font-size: 72px; }
+  .footer-info { gap: 40px; }
+  .footer-col { text-align: center; }
+}
+
+/* mobil */
+@media (max-width: 576px) {
+  .logo { font-size: 40px; }
+
+  .banner h1 { font-size: 26px; }
+
+  /* bilde og tekst under hverandre */
   .welcome,
   .location {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
     min-height: 0;
   }
 
   .welcome img,
   .location img {
+    contain: none; /*nå skal bildet ha sin egen høyde*/
     height: auto;
-    aspect-ratio: 4 / 3; /*fast form i stedet for fast høyde*/
+    aspect-ratio: 4 / 3;
   }
 
-  .welcome-text { padding: 48px 20px; }
-  .welcome-text h2 { font-size: 32px; }
-  .welcome-text p { font-size: 22px; }
+  .welcome-text { padding: 40px 20px; }
+  .welcome-text p { font-size: 20px; }
 
-  .location-text { padding: 48px 20px; }
-  .location-text h2 {
-    font-size: 28px;
-    text-align: center;
-  }
+  .location-text { padding: 40px 20px; }
+  .location-text h2 { text-align: center; }
 
-  .pillbutton {
-    width: 100%;
-    max-width: 320px; /*knappene blir ikke kjempebrede*/
-    font-size: 18px;
-  }
+  .pillbutton:hover { transform: none; } /*knappene vokser ikke oppå hverandre*/
 
-  /* oliven-stripen */
   .divider {
     height: 70px;
     background-size: auto 40px;
   }
 
-  /* reviews (bildene går i én kolonne via menysidens mobilregler) */
   .reviews { padding: 48px 20px; }
-  .quote blockquote p { font-size: 28px; }
+  .quote blockquote p { font-size: 26px; }
   .quote figcaption { font-size: 18px; }
 
-  /* footer: kolonnene under hverandre */
   footer { padding: 48px 20px; }
-  .footer-logo .logo { font-size: 64px; }
+  .footer-logo .logo { font-size: 60px; }
   .footer-logo p { font-size: 18px; }
 
   .footer-info {
@@ -2514,6 +2518,3 @@ section.contact {
   }
   .footer-col h2 { font-size: 20px; }
 }
-
-
-
