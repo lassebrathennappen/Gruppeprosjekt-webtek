@@ -2,6 +2,10 @@
 :root {
   /* Farger */
   --off-white: #F6F3EC;
+  --dark-blue: #0A3A7A;/* Variabler*/
+:root {
+  /* Farger */
+  --off-white: #F6F3EC;
   --dark-blue: #0A3A7A;
   --blue: #0D5EAF;
   --orange: #CC3B01;
@@ -1173,6 +1177,1328 @@ section.contact {
 
  
 
+
+
+
+
+  --blue: #0D5EAF;
+  --orange: #CC3B01;
+  --off-black: #1E1E1E;
+  --grey: rgba(30, 30, 30, 0.25); /* #1E1E1E på 25 % */
+  
+  /* Fonter */
+  --font-display: "Erica One", cursive;
+  --font-body: "Inter", Arial, sans-serif;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/* teksstiler*/
+body {
+  margin: 0;
+  background-color: var(--off-white);
+  font-family: var(--font-body);
+  color: var(--dark-blue);
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*navbar*/
+nav a {
+  color: var(--off-white);
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase; 
+}
+
+
+nav ul{
+  list-style: none; /*fjerner prikkene*/
+  margin: 0;
+  padding: 0;
+  display: flex; /*så de havner på en rad*/
+  align-items: center;
+  gap: 40px; /*space mellom teksten*/
+  font-family: var(--font-body);
+  color: var(--off-white);
+}
+
+
+header {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 95px;
+  padding: 0px 24px;
+  box-sizing: border-box;
+}
+
+.logo{
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.nav-button {
+  border: 2px solid var(--off-white);
+  border-radius: 100px;
+  width:175px;
+  height:48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box; /* rammen regnes inni 175 × 48*/
+}
+
+
+/*understrek for sidene i navbar ved interaksjon*/
+nav a:not(.nav-button):hover, 
+nav a[aria-current="page"]:not(.nav-button){ /*annen effekt for når man trykker på reservasjon*/
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/*for reservasjonknapp*/
+nav a.nav-button:hover, 
+nav a.nav-button[aria-current="page"]{ /*annen effekt for når man trykker på reservasjon*/
+  background-color: var(--orange);
+  border-color: var(--orange);
+  font-weight: 700; 
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*footer*/
+
+footer {
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  display: flex;
+  justify-content: space-between; /* logo til venstre, info til høyre */
+  align-items: center;
+  padding: 80px 50px;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo .logo {
+  font-size: 96px;
+}
+
+.footer-logo p {
+  margin: 0;
+  font-size: 24px;
+}
+
+.footer-info {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-col {
+  text-align: right;
+}
+
+.footer-col h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.footer-col p,
+.footer-col address {
+  font-size: 16px;
+  font-style: normal;
+  margin: 0 0 16px;
+}
+
+.footer-col a {
+  color: var(--off-white);
+  text-decoration: none;
+}
+
+.footer-col address a {
+  text-decoration: underline; /* bare adressen er understreket i mockupen */
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/*for pille knappene*/
+/*feks class= primary pillbutton*/
+.pillbutton{
+  border-radius: 100px;
+  width: 245px;
+  height: 50px;
+  font-family: var(--font-body);
+  font-size: 24px;
+
+  display: inline-flex;      /* gjør at width/height virker */
+  align-items: center;       /* teksten midt i, vertikalt */
+  justify-content: center;   /* teksten midt i, horisontalt */
+  text-decoration: none;     /* fjerner understreken */
+  box-sizing: border-box;    /* 50px inkluderer border */
+
+  transition: transform 0.2s ease;
+}
+/*den oransje knappen*/
+.primary {
+  background-color: var(--orange);
+  border: 2px solid var(--orange);
+  color: var(--off-white);
+}
+
+/*de hvite knappene med blå border*/
+.secondary{
+  background-color: var(--off-white);
+  border: 2px solid var(--dark-blue);
+  color: var(--dark-blue);
+}
+
+.pillbutton:hover {
+  transform: scale(1.15); /* 15 % større */
+}
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/*styling for main på index.html*/
+
+.banner{ /*denne er universal for alle sidene egt*/
+  display: flex;
+  height: 162px;
+  background-color: var(--blue);
+  align-items: center;       /* teksten midt i, vertikalt */
+  justify-content: center;   /* teksten midt i, horisontalt */
+}
+
+.banner h1 {
+  margin: 0;
+  color: var(--off-white);
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.welcome {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
+  overflow: hidden;           /* ingenting får renne ut */
+  height: calc(100vh - 95px - 162px);
+  min-height: 400px;
+  color: var(--dark-blue);
+}
+
+.welcome img {
+  display: block;  /* fjerner den lille luka under bilder */
+  width: 100%;
+  height: 100%;        /* fyller hele 767px */
+  object-fit: cover;   /* beskjærer i stedet for å strekke */
+}
+
+.welcome-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 110px;
+}
+
+.welcome-text h2{
+  font-size: 48px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0 0 24px;
+}
+
+.welcome-text p{
+  font-family: var(--font-body);
+  font-size: 36px;
+  max-width: 477px;
+  margin: 0;
+}
+
+.divider {
+  height: 118px;
+  border-top: 5px solid var(--dark-blue);
+  border-bottom: 5px solid var(--dark-blue);
+  background-image: url("../images/dekor.png");
+  background-repeat: repeat-x;
+  background-position: center;
+  background-size: auto 70px;
+}
+
+.location {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;   /* samme her */
+  overflow: hidden;
+  background-color: var(--off-white);
+  height: 767px;
+  min-height: 600px;
+}
+
+.location img {
+  display: block;
+  width: 100%;
+  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
+  object-fit: cover;
+}
+
+.location-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;        
+  padding: 0 70px;
+}
+
+.location-text h2 {
+  align-self: stretch;
+  margin: 0;          /* fjerner den skjulte standardavstanden */
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.location-text address {
+  font-style: normal;
+  font-size: 24px;
+}
+
+.location-text address a {
+  color: var(--dark-blue);
+}
+
+
+.reviews {
+  background-color: var(--blue);
+  padding: 80px 50px;
+  color: var(--off-white);
+}
+
+.quote {
+  margin: 0 0 70px;
+  text-align: center;
+}
+
+.quote blockquote {
+  margin: 0;
+}
+
+.quote blockquote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 48px;
+}
+
+.quote figcaption {
+  font-size: 24px;
+}
+
+.review-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+}
+
+.review-images img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* About-us- siden */
+
+.Split-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;   /* raden = nøyaktig seksjonens høyde */
+    overflow: hidden;           /* ingenting får renne ut */
+    color: var(--dark-blue);
+    height: 100vh;
+    min-height: 600px;
+}
+.image-about {
+  width: 100%;
+  height: 100%;
+}
+
+.image-about img {
+  display: block;  /* fjerner den lille luka under bilder */
+  width: 100%;
+  height: 100%;        /* fyller hele 767px */
+  object-fit: cover;   /* beskjærer i stedet for å strekke */
+  object-position: center;
+}
+
+.text-about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 180px 100px 80px 100px;
+}
+
+.text-about h2{
+  font-size: 48px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin: 0 0 24px;
+  margin-bottom: 30px
+}
+
+.text-about p{
+  font-family: var(--font-body);
+  font-size: 24px;
+  line-height: 1.5; 
+  max-width: 570px;
+  margin: 0;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* meny-siden (menu.html) */
+
+/* skjermlesing av tekst */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* farge på kategorilenkene */
+.menu-tab {
+  color: var(--dark-blue);
+  font-weight: 700;
+  text-transform: none;
+}
+
+.menu-tab.active {
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+
+/* Sitatet under banneret */
+.banner + .quote {
+  margin: 48px 0 100px;
+  padding: 0 16px;
+}
+
+/* Bildegalleri uten blå bakgrunn */
+.reviews-light {
+  background-color: var(--off-white);
+  padding: 0 50px;
+  color: var(--dark-blue);
+}
+
+/* Kategorilenker */
+.menu-tabs {
+  margin: 64px 16px 96px;
+}  
+
+.menu-tabs ul {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 90px;
+}
+
+.menu-tab {
+  display: inline-block;
+  padding: 8px 4px;
+  color: var(--dark-blue);
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: none; /* overstyrer uppercase fra "nav a" */
+}
+
+.menu-tab:hover,
+.menu-tab.active {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+/* valgt kategori */
+.menu-tab.active {
+  color: var(--orange);
+}
+
+/* Menyseksjoner og retter */
+.menu-section {
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
+  color: var(--off-black);
+}
+
+.menu-section[hidden] {
+  display: none;
+}
+
+.dish-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 80px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dish h3 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+.dish-desc {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.dish-price {
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+ 
+/* reservasjonssiden (reservations.html) */
+ 
+/* oppsett for hele main på reservasjonssiden */
+.reservation {
+  display: flex; /*boksene står ved siden av hverandre*/
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /*avstand mellom venstre og høyre kolonne*/
+  padding: 105px 16px 60px;
+  color: var(--off-black);
+}
+ 
+.reservation *,
+.reservation *::before,
+.reservation *::after {
+  box-sizing: border-box; /* rammen regnes inni bredden*/
+}
+ 
+.reservation h2,
+.reservation p {
+  margin: 0; /* fjerner standardavstanden*/
+}
+ 
+/* tydelig ramme rundt knapper og felt når man bruker tastatur*/
+.reservation button:focus-visible,
+.reservation input:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+ 
+.reservation h2:focus {
+  outline: none; /* overskriften får fokus fra JS, men skal ikke ha ramme*/
+}
+ 
+/* hvert steg i reservasjonen*/
+.step {
+  display: flex;
+  flex-direction: column; /*boksen og "Next" under hverandre*/
+  align-items: center;
+}
+ 
+/* skjuler det som ikke skal vises enda*/
+.step[hidden],
+.summary[hidden],
+.summary-box[hidden],
+.next-btn[hidden] {
+  display: none;
+}
+ 
+/* den store boksen med blå kant*/
+.card {
+  width: 506px;
+  max-width: 100%;
+  border: 3px solid var(--dark-blue);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+}
+ 
+.card h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+ 
+/* "Next" som ser ut som en lenke*/
+.next-btn {
+  background: none;
+  border: none;
+  color: var(--off-black);
+  font-family: var(--font-body);
+  font-size: 24px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 32px;
+  cursor: pointer;
+}
+ 
+ 
+/* venstre kolonne: det brukeren har valgt så langt*/
+.summary {
+  width: 506px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; /*boksene under hverandre*/
+  gap: 39px;
+}
+ 
+.summary-box {
+  height: 81px;
+  border: 3px solid var(--dark-blue);
+  border-radius: 24px;
+  display: flex; /*tekst, verdi og blyant på en rad*/
+  align-items: center;
+  padding: 0 24px;
+  font-size: 24px;
+}
+ 
+.summary-label {
+  flex: 1; /*dytter verdien og blyanten til høyre*/
+}
+ 
+.summary-value {
+  margin-right: 28px;
+}
+ 
+/* tallet for gjester*/
+#value-guests {
+  margin-right: 41px;
+}
+ 
+/* blyant-knappen for å endre et valg*/
+.edit-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--dark-blue);
+  display: flex;
+  cursor: pointer;
+}
+ 
+ 
+/* steg 1: antall gjester*/
+.guest-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 71px); /*4 knapper på hver rad*/
+  gap: 10px;
+  justify-content: center;
+}
+ 
+.guest-btn {
+  width: 71px;
+  height: 71px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 32px;
+  cursor: pointer;
+}
+ 
+/* knappene blir litt lysere når musen holdes over*/
+.guest-btn:hover,
+.time-btn:hover {
+  filter: brightness(1.25);
+}
+ 
+/* valgt knapp blir oransj (responsiv komponent 4)*/
+.guest-btn[aria-pressed="true"],
+.day[aria-pressed="true"],
+.time-btn[aria-pressed="true"] {
+  background-color: var(--orange);
+}
+ 
+ 
+/* steg 2: kalender*/
+/* navnet på måneden*/
+.card .month-name {
+  font-size: 24px;
+  margin: -14px 0 10px;
+}
+ 
+/* pilene og kalenderen på en rad*/
+.calendar-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+ 
+/* pilene for å bytte måned*/
+.arrow-btn {
+  background: none;
+  border: none;
+  color: var(--off-black);
+  font-family: var(--font-body);
+  font-size: 32px;
+  padding: 0 6px;
+  cursor: pointer;
+}
+ 
+/* skjuler pilen tilbake når man er på denne måneden*/
+.arrow-btn:disabled {
+  visibility: hidden;
+}
+ 
+/* 7 kolonner, en for hver ukedag*/
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  column-gap: 13px;
+  row-gap: 11px;
+}
+ 
+/* ukedagene og dagene fra andre måneder*/
+.weekday,
+.other-month {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+ 
+.other-month {
+  color: #555555;
+}
+ 
+/* ledige dager er blå*/
+.day {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 20px;
+  cursor: pointer;
+}
+ 
+.day:not(:disabled):hover {
+  filter: brightness(1.25);
+}
+ 
+/* dager som ikke kan velges er grå*/
+.day:disabled {
+  background-color: var(--grey);
+  color: var(--off-black);
+  cursor: not-allowed;
+}
+ 
+/* dagens dato får en oransje ramme*/
+.day.today {
+  outline: 3px solid var(--orange);
+  outline-offset: 2px;
+}
+ 
+ 
+/* steg 3: tidspunkt*/
+/* boksene for tid og kontaktinfo er 1px smalere i Figma*/
+#step-time .card,
+#step-contact .card {
+  width: 505px;
+}
+ 
+.card #time-grid {
+  margin-top: -17px;
+}
+ 
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 206px); /*2 knapper på hver rad*/
+  gap: 40px;
+  justify-content: center;
+}
+ 
+.time-btn {
+  height: 59px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  font-family: var(--font-body);
+  font-size: 32px;
+  cursor: pointer;
+}
+ 
+/* siste knapp (20:00-22:00) står alene i midten*/
+.time-btn:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 206px;
+}
+ 
+ 
+/* steg 4: kontaktinfo*/
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+ 
+.card-form {
+  text-align: left;
+  padding: 24px 58px 23px;
+}
+ 
+.card-form h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+ 
+.card-form label {
+  display: block; /*label over feltet*/
+  font-size: 32px;
+  margin-bottom: 22px;
+}
+ 
+/* oransje stjerne for påkrevde felt*/
+.star {
+  color: var(--orange);
+}
+ 
+/* de grå feltene man skriver i*/
+.card-form input {
+  display: block;
+  width: 381px;
+  max-width: 100%;
+  height: 49px;
+  border: none;
+  border-radius: 25px;
+  background-color: var(--grey);
+  padding: 0 20px;
+  font-family: var(--font-body);
+  font-size: 24px;
+  color: var(--off-black);
+  margin-bottom: 25px;
+}
+ 
+/* eksempelteksten i feltene*/
+.card-form input::placeholder {
+  color: var(--off-black);
+  font-style: italic;
+}
+ 
+/* feilmelding under feltet (skjemavalidering)*/
+.card-form .error-text {
+  color: var(--orange);
+  font-size: 18px;
+  margin: -17px 0 14px 20px;
+}
+ 
+/* rød ramme rundt feltet som er feil*/
+.card-form input[aria-invalid="true"] {
+  outline: 2px solid var(--orange);
+}
+ 
+.required-text {
+  color: var(--orange);
+  font-style: italic;
+  font-size: 24px;
+  margin-top: -2px;
+}
+ 
+ 
+/* steg 5: takk for bestillingen*/
+.card-wide {
+  width: 777px;
+}
+ 
+.card-wide h2 {
+  margin-bottom: 36px;
+}
+ 
+.thanks-text {
+  font-size: 24px;
+  line-height: 1.25;
+  padding-bottom: 21px;
+}
+ 
+ 
+/* mindre skjermer (nettbrett)*/
+@media (max-width: 1100px) {
+  .reservation {
+    flex-direction: column; /*venstre kolonne havner over boksen*/
+    align-items: center;
+    padding-top: 40px;
+  }
+ 
+  .summary {
+    gap: 16px;
+  }
+}
+ 
+/* mobil*/
+@media (max-width: 600px) {
+  .card h2 {
+    font-size: 30px;
+  }
+ 
+  .guest-grid {
+    grid-template-columns: repeat(4, 60px);
+  }
+ 
+  .guest-btn {
+    width: 60px;
+    height: 60px;
+  }
+ 
+  .time-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+ 
+  .time-btn {
+    font-size: 20px;
+  }
+ 
+  .time-btn:last-child:nth-child(odd) {
+    width: 50%;
+  }
+ 
+  .card-form {
+    padding: 24px;
+  }
+ 
+  .card-form label {
+    font-size: 24px;
+  }
+ 
+  .card-form input {
+    font-size: 18px;
+  }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+ 
+/* event-siden (events.html) */
+/* bruker .banner, .welcome, .divider og .location fra forsiden, og .dish fra menysiden.
+   her endres bare det som er annerledes på event-siden*/
+ 
+/* banneret er litt lavere på event-siden*/
+.event-page .banner {
+  height: 147px;
+}
+ 
+/* tekst + grillbilde*/
+.event-page .welcome {
+  height: auto; /*boksen vokser hvis teksten trenger mer plass*/
+  min-height: 782px;
+}
+ 
+.event-page .welcome-text {
+  padding: 0 60px; /*teksten står nærmere kanten enn på forsiden*/
+}
+ 
+.event-page .welcome-text p {
+  font-size: 24px; /*mindre tekst enn på forsiden*/
+  max-width: 570px;
+  margin-left: 13px;
+  padding: 40px 0; /*luft over og under hvis teksten blir lang*/
+}
+ 
+ 
+/* bilde + grillmeny*/
+.event-page .location {
+  height: auto; /*boksen vokser hvis menyen trenger mer plass*/
+  min-height: 1137px;
+  color: var(--off-black);
+}
+ 
+/* bildene fyller høyden uten å gjøre boksen høyere*/
+.event-page .welcome img,
+.event-page .location img {
+  contain: size;
+}
+ 
+/* kolonnen med rettene*/
+.event-dishes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*rettene midt i høyden*/
+  padding: 40px 24px 40px 180px;
+}
+ 
+/* rettene står under hverandre (ikke i to kolonner som på menysiden)*/
+.event-dishes .dish-list {
+  grid-template-columns: 1fr;
+  gap: 50px;
+  max-width: 410px;
+}
+ 
+.event-dishes .dish h3 {
+  margin-bottom: 25px;
+}
+ 
+.event-dishes .dish-desc {
+  margin-bottom: 23px;
+}
+
+
+<!-- Contact us -->
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100%;   /* samme her */
+  overflow: hidden;
+  background-color: var(--off-white);
+  height: 767px;
+  min-height: 600px;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;        
+  padding: 0 70px;
+}
+
+.contact-text p {
+  align-self: stretch;
+  margin: 0 0 16;          /* fjerner den skjulte standardavstanden */
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 570px;
+}
+
+.contact-text address {
+  font-style: normal;
+  font-size: 24px;
+}
+
+.contact-text address a {
+  color: var(--dark-blue);
+}
+
+.contact img {
+  display: block;
+  width: 100%;
+  height: 100%;        /* fyller seksjonen i stedet for aspect-ratio */
+  object-fit: cover;
+}
+
+section.contact {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* event-siden: nettbrett */
+@media (max-width: 768px) {
+  .event-page .banner {
+    height: 120px; /*samme som Marte*/
+  }
+
+  .event-page .welcome {
+    min-height: 500px;
+  }
+
+  .event-page .welcome-text {
+    padding: 0 40px;
+  }
+
+  .event-page .welcome-text p {
+    font-size: 20px;
+    margin-left: 0;
+    padding: 24px 0;
+  }
+
+  .event-page .location {
+    min-height: 600px;
+  }
+
+  .event-dishes {
+    padding: 40px 30px; /*fjerner de 180px til venstre*/
+  }
+
+  .event-dishes .dish-list {
+    gap: 32px;
+  }
+}
+
+/* event-siden: mobil */
+@media (max-width: 576px) {
+  .event-page .banner {
+    height: auto; 
+  }
+    /* bilde og tekst under hverandre*/
+  .event-page .welcome,
+  .event-page .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .event-page .welcome img,
+  .event-page .location img {
+    height: auto;
+    aspect-ratio: 4 / 3; /*fast form i stedet for fast høyde*/
+  }
+
+  .event-page .banner {
+    padding: 32px 20px;
+  }
+
+  .event-page .banner h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .event-page .welcome,
+  .event-page .location {
+    min-height: 0; 
+  }
+
+  /* bildene trenger sin egen høyde når de står alene*/
+  .event-page .welcome img,
+  .event-page .location img {
+    contain: none;
+  }
+
+  .event-page .welcome-text {
+    padding: 48px 20px;
+  }
+
+  .event-page .welcome-text p {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .event-dishes {
+    padding: 48px 20px;
+  }
+
+  .event-dishes .dish-list {
+    max-width: none; /*rettene bruker hele bredden*/
+  }
+
+  .event-dishes .dish h3,
+  .event-dishes .dish-desc {
+    margin-bottom: 12px;
+  }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+
+/* responsivt: menysiden (menu.html) */
+
+/* nettbrett */
+@media (max-width: 768px) {
+  .banner + .quote { margin: 32px 0 48px; }
+  .reviews-light { padding: 0 30px; }
+
+  .menu-tabs { margin: 40px 24px 48px; }
+  .menu-tabs ul { gap: 8px 40px; }
+  .menu-tab { font-size: 24px; }
+
+  .menu-section { padding: 0 30px 60px; }
+  .dish-list { gap: 32px 40px; }
+  .dish h3 { font-size: 26px; }
+  .dish-desc,
+  .dish-price { font-size: 18px; }
+}
+
+/* mobil */
+@media (max-width: 576px) {
+  .banner + .quote { margin: 24px 0 32px; padding: 0 20px; }
+  .reviews-light { padding: 0 20px; }
+  .review-images { grid-template-columns: 1fr; gap: 16px; }
+  .review-images img { aspect-ratio: 4 / 3; }
+
+  .menu-tabs { margin: 32px 20px 40px; }
+  .menu-tabs ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+    justify-items: center;
+  }
+  .menu-tab { font-size: 20px; padding: 6px 2px; }
+
+  .menu-section { padding: 0 20px 48px; }
+  .dish-list { grid-template-columns: 1fr; gap: 32px; }
+  .dish h3 { font-size: 24px; }
+  .dish-desc,
+  .dish-price { font-size: 16px; }
+}
+
+ 
+--------------------------------------------------------------------------------------------------------------------------------
+/* responsivt: forsiden (index.html) + header/footer på alle sider */
+
+/* nettbrett */
+@media (max-width: 768px) {
+  /* header */
+  header {
+    height: auto;
+    min-height: 80px;
+    padding: 12px 24px;
+  }
+
+  .logo { font-size: 48px; }
+
+  nav ul { gap: 24px; }
+  nav a { font-size: 16px; }
+
+  .nav-button {
+    width: auto;
+    height: 40px;
+    padding: 0 20px;
+  }
+
+  /* banner */
+  .banner h1 {
+    font-size: 36px;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  /* welcome */
+  .welcome-text { padding: 0 40px; }
+  .welcome-text h2 { font-size: 36px; }
+  .welcome-text p { font-size: 26px; }
+
+  /* location */
+  .location-text {
+    gap: 24px;
+    padding: 0 30px;
+  }
+  .location-text h2 { font-size: 32px; }
+  .location-text address { font-size: 20px; }
+
+  .pillbutton {
+    width: 220px;
+    font-size: 20px;
+  }
+
+  /* reviews */
+  .reviews { padding: 60px 30px; }
+  .quote { margin-bottom: 48px; }
+  .quote blockquote p { font-size: 36px; }
+  .quote figcaption { font-size: 20px; }
+
+  .review-images {
+    grid-template-columns: repeat(2, 1fr); /*2 bilder på hver rad*/
+    gap: 24px;
+  }
+
+  /* footer: logo over infoen */
+  footer {
+    flex-direction: column;
+    gap: 48px;
+    padding: 60px 30px;
+  }
+
+  .footer-logo .logo { font-size: 72px; }
+
+  .footer-info { gap: 40px; }
+  .footer-col { text-align: center; }
+}
+
+/* mobil */
+@media (max-width: 576px) {
+  /* header: logo over menyen, lenkene brytes på flere linjer */
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .logo { font-size: 40px; }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+
+  /* banner */
+  .banner {
+    height: auto;
+    padding: 32px 20px;
+  }
+  .banner h1 { font-size: 28px; }
+
+  /* welcome + location: bilde og tekst under hverandre */
+  .welcome,
+  .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+    min-height: 0;
+  }
+
+  .welcome img,
+  .location img {
+    height: auto;
+    aspect-ratio: 4 / 3; /*fast form i stedet for fast høyde*/
+  }
+
+  .welcome-text { padding: 48px 20px; }
+  .welcome-text h2 { font-size: 32px; }
+  .welcome-text p { font-size: 22px; }
+
+  .location-text { padding: 48px 20px; }
+  .location-text h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .pillbutton {
+    width: 100%;
+    max-width: 320px; /*knappene blir ikke kjempebrede*/
+    font-size: 18px;
+  }
+
+  /* oliven-stripen */
+  .divider {
+    height: 70px;
+    background-size: auto 40px;
+  }
+
+  /* reviews (bildene går i én kolonne via menysidens mobilregler) */
+  .reviews { padding: 48px 20px; }
+  .quote blockquote p { font-size: 28px; }
+  .quote figcaption { font-size: 18px; }
+
+  /* footer: kolonnene under hverandre */
+  footer { padding: 48px 20px; }
+  .footer-logo .logo { font-size: 64px; }
+  .footer-logo p { font-size: 18px; }
+
+  .footer-info {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .footer-col h2 { font-size: 20px; }
+}
 
 
 
