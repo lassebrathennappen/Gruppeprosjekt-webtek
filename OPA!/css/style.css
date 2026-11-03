@@ -1034,6 +1034,79 @@ section.contact {
   grid-template-columns: 1fr 1fr;
 }
 
+/* event-siden: nettbrett */
+@media (max-width: 768px) {
+  .event-page .banner {
+    height: 120px; /*samme som Marte*/
+  }
+
+  .event-page .welcome {
+    min-height: 500px;
+  }
+
+  .event-page .welcome-text {
+    padding: 0 40px;
+  }
+
+  .event-page .welcome-text p {
+    font-size: 20px;
+    margin-left: 0;
+    padding: 24px 0;
+  }
+
+  .event-page .location {
+    min-height: 600px;
+  }
+
+  .event-dishes {
+    padding: 40px 30px; /*fjerner de 180px til venstre*/
+  }
+
+  .event-dishes .dish-list {
+    gap: 32px;
+  }
+}
+
+/* event-siden: mobil */
+@media (max-width: 576px) {
+  .event-page .banner {
+    height: auto; 
+  }
+
+  .event-page .welcome,
+  .event-page .location {
+    min-height: 0; 
+  }
+
+  /* bildene trenger sin egen høyde når de står alene*/
+  .event-page .welcome img,
+  .event-page .location img {
+    contain: none;
+  }
+
+  .event-page .welcome-text {
+    padding: 48px 20px;
+  }
+
+  .event-page .welcome-text p {
+    font-size: 18px;
+    padding: 0;
+  }
+
+  .event-dishes {
+    padding: 48px 20px;
+  }
+
+  .event-dishes .dish-list {
+    max-width: none; /*rettene bruker hele bredden*/
+  }
+
+  .event-dishes .dish h3,
+  .event-dishes .dish-desc {
+    margin-bottom: 12px;
+  }
+}
+
 /*---------------------------------------------------------------------------------------------------------------------*/
 
 /* responsivt: menysiden (menu.html) */
