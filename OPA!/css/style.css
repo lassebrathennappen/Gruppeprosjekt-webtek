@@ -1072,6 +1072,27 @@ section.contact {
   .event-page .banner {
     height: auto; 
   }
+    /* bilde og tekst under hverandre*/
+  .event-page .welcome,
+  .event-page .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .event-page .welcome img,
+  .event-page .location img {
+    height: auto;
+    aspect-ratio: 4 / 3; /*fast form i stedet for fast høyde*/
+  }
+
+  .event-page .banner {
+    padding: 32px 20px;
+  }
+
+  .event-page .banner h1 {
+    font-size: 28px;
+    text-align: center;
+  }
 
   .event-page .welcome,
   .event-page .location {
