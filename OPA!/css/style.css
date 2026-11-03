@@ -2353,6 +2353,21 @@ section.contact {
 --------------------------------------------------------------------------------------------------------------------------------
 /* responsivt: forsiden (index.html) + header/footer på alle sider */
 
+/* liten laptop: menyen får ikke plass med full avstand */
+@media (max-width: 1100px) {
+  .logo { font-size: 52px; }
+
+  nav ul { gap: 24px; }
+  nav a { font-size: 17px; }
+
+  .nav-button {
+    width: auto;
+    padding: 0 20px;
+  }
+
+  .welcome-text { padding: 0 60px; }
+}
+
 /* nettbrett */
 @media (max-width: 768px) {
   /* header */
