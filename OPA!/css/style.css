@@ -875,8 +875,9 @@ footer {
     gap: 16px;
   }
  
-  /* steget blir aldri bredere enn skjermen*/
-  .step {
+  /* steget og skjemaet blir aldri bredere enn skjermen*/
+  .step,
+  .contact-form {
     width: 100%;
   }
 }
