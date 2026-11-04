@@ -644,7 +644,7 @@ footer {
  
 /* knappene blir litt lysere når musen holdes over*/
 .guest-btn:hover,
-.time-btn:hover {
+.time-btn:not(:disabled):hover {
   filter: brightness(1.25);
 }
  
@@ -767,6 +767,14 @@ footer {
   font-family: var(--font-body);
   font-size: 32px;
   cursor: pointer;
+}
+ 
+/* tider som er booket er grå med strek over (samme grå som kalenderen)*/
+.time-btn:disabled {
+  background-color: var(--grey);
+  color: var(--off-black);
+  text-decoration: line-through;
+  cursor: not-allowed;
 }
  
 /* siste knapp (20:00-22:00) står alene i midten*/
@@ -1385,11 +1393,11 @@ section.contact {
   }
   .footer-col h2 { font-size: 20px; }
 }
-
+ 
 /*---------------------------------------------------------------------------------------------------------------------*/
-
+ 
 /* responsivt: about us (about-us.html) og contact us (contact.html) */
-
+ 
 /* liten laptop: ingen fast høyde, boksen vokser med teksten */
 @media (max-width: 1100px) {
   .Split-section,
@@ -1398,26 +1406,26 @@ section.contact {
     min-height: 500px;
     grid-template-rows: auto;
   }
-
+ 
   /* bildet fyller høyden, men bestemmer den ikke (samme triks som forsiden)*/
   .image-about img,
   .contact img {
     contain: size;
   }
-
+ 
   .text-about { padding: 60px 50px; }
   .text-about h2 { font-size: 40px; }
   .text-about p { font-size: 22px; }
-
+ 
   .contact-text { padding: 60px 40px; }
 }
-
+ 
 /* nettbrett */
 @media (max-width: 768px) {
   .text-about { padding: 40px 30px; }
   .text-about h2 { font-size: 32px; }
   .text-about p { font-size: 20px; }
-
+ 
   .contact-text {
     padding: 40px 24px;
     gap: 20px;
@@ -1425,7 +1433,7 @@ section.contact {
   .contact-text p,
   .contact-text address { font-size: 20px; }
 }
-
+ 
 /* mobil: bilde og tekst under hverandre */
 @media (max-width: 576px) {
   .Split-section,
@@ -1433,24 +1441,24 @@ section.contact {
     grid-template-columns: 1fr;
     min-height: 0;
   }
-
+ 
   /* bildet står alltid over teksten, så rekkefølgen blir lik i alle seksjonene*/
   .image-about {
     order: -1;
     height: auto;
   }
-
+ 
   .image-about img,
   .contact img {
     contain: none; /*nå skal bildet ha sin egen høyde*/
     height: auto;
     aspect-ratio: 4 / 3; /*mindre bilde med fast form*/
   }
-
+ 
   .text-about { padding: 40px 20px; }
   .text-about h2 { font-size: 28px; }
   .text-about p { font-size: 18px; }
-
+ 
   .contact-text { padding: 40px 20px; }
   .contact-text p,
   .contact-text address { font-size: 18px; }
