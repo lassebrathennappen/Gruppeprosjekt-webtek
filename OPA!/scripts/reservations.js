@@ -225,6 +225,21 @@ const allTimes = [
     "20:00-22:00"
 ];
  
+// Tidspunkter som allerede er booket (0 = søndag, 5 = fredag, 6 = lørdag)
+// Det er travlest i helgene, så da er flere tider opptatt
+const bookedTimes = {
+    0: ["15:00-17:00", "15:30-17:30", "16:00-18:00"],
+    4: ["19:00-21:00"],
+    5: ["17:30-19:30", "18:00-20:00", "18:30-20:30", "19:00-21:00"],
+    6: ["17:00-19:00", "18:00-20:00", "18:30-20:30", "19:00-21:00", "19:30-21:30"]
+};
+ 
+// Sjekker om et tidspunkt er booket på den valgte datoen
+function isBooked(time) {
+    const booked = bookedTimes[booking.date.getDay()] || []; // tom liste hvis ingenting er booket
+    return booked.includes(time);
+}
+ 
 // Lager en knapp for hvert tidspunkt
 function buildTimes() {
     const grid = document.getElementById("time-grid");
@@ -236,6 +251,12 @@ function buildTimes() {
         btn.className = "time-btn";
         btn.textContent = time;
         btn.setAttribute("aria-pressed", time === booking.time ? "true" : "false");
+ 
+        // Bookede tider blir grå og kan ikke trykkes
+        if (isBooked(time)) {
+            btn.disabled = true;
+            btn.setAttribute("aria-label", time + ", booked"); // skjermleser sier at tiden er opptatt
+        }
  
         btn.addEventListener("click", function () {
             booking.time = time;
@@ -335,5 +356,4 @@ document.querySelectorAll(".edit-btn").forEach(function (btn) {
         showStep(step);
     });
 });
-
 
