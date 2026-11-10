@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P3 – Project Testing – OPA!</title>
+  <!-- TODO: link your group's shared stylesheet for the project documents here,
+       e.g. <link rel="stylesheet" href="documents.css">, and delete the <style> block below. -->
+  <style>
+    body {
+      max-width: 46rem;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.6;
+      color: #1d2a3a;
+      background: #fdfdfb;
+    }
+    h1, h2, h3 { font-family: "Segoe UI", Helvetica, Arial, sans-serif; line-height: 1.25; }
+    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 2px solid #1f4e8c; padding-bottom: 0.25rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.5rem; }
+    a { color: #1f4e8c; }
+    a:focus-visible { outline: 3px solid #1f4e8c; outline-offset: 2px; }
+    .table-wrap { overflow-x: auto; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+    caption { text-align: left; font-weight: bold; padding-bottom: 0.5rem; }
+    th, td { border: 1px solid #c9d2dd; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
+    thead th { background: #e8eef6; }
+    blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 4px solid #1f4e8c; background: #f1f5fa; }
+    .todo { background: #fff3b0; padding: 0 0.2rem; }
+    footer { margin-top: 3rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>P3 – Project Testing: OPA!</h1>
+  <p>Authors: <span class="todo">TODO: names of all group members</span></p>
+  <p>Group: <span class="todo">TODO: group number</span></p>
+  <p>Date: <time datetime="2026-11-20">20 November 2026</time></p>
+  <p>Website: <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">OPA! – Greek restaurant in Trondheim</a></p>
+</header>
+
+<nav aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#admin">Administrative details</a></li>
+    <li><a href="#document">Testing document</a></li>
+    <li><a href="#audience">Tester audience</a></li>
+    <li><a href="#platforms">Testing platforms</a></li>
+    <li><a href="#feedback">Feedback summary</a></li>
+    <li><a href="#response">Our response</a></li>
+    <li><a href="#reflection">Self-reflection</a></li>
+  </ol>
+</nav>
+
+<main>
+
+  <section id="admin">
+    <h2>1. Administrative details</h2>
+    <p>
+      Client: <span class="todo">TODO: client name</span>,
+      <span class="todo">TODO: position in the organisation</span>.
+    </p>
+    <p>
+      The website belongs to OPA!, a Greek restaurant in Trondheim city centre (Munkegata 1)
+      serving traditional Greek food with a modern twist. The site lets visitors read about the
+      restaurant, browse the food and drinks menu, find events and special offers, and reserve a table.
+    </p>
+  </section>
+
+  <section id="document">
+    <h2>2. Testing document</h2>
+    <p>
+      Our main method was live, observed usability testing. Each tester was given seven tasks,
+      read aloud one at a time so that later tasks did not give away earlier answers.
+      We did not explain how to navigate the site, and we did not help during the tasks.
+      For each task we recorded whether it was completed, the time spent, the path the tester
+      took, any hesitation or misclicks, and direct quotes. Testers also rated each task from
+      1 (very easy) to 5 (very difficult).
+    </p>
+    <h3>Tasks</h3>
+    <ol>
+      <li>Find the opening hours.</li>
+      <li>Find out if there are any drinks that tempt you.</li>
+      <li>Find out where the restaurant is located.</li>
+      <li>Book a table.</li>
+      <li>Read the history of the restaurant.</li>
+      <li>Find out if the restaurant has any special offers or events.</li>
+      <li>Find the menu for the event.</li>
+    </ol>
+    <p>
+      After the tasks, testers were asked follow-up questions on design, navigation, content,
+      usability, accessibility (keyboard navigation, 200 % zoom, contrast) and responsiveness.
+    </p>
+    <p>
+      Google Form: <span class="todo">TODO: link to the Google Form</span>.
+      The client was also asked to test the website (see <a href="#client">client testimonial</a>).
+    </p>
+  </section>
+
+  <section id="audience">
+    <h2>3. Tester audience</h2>
+    <p>
+      OPA! targets adults in Trondheim who want to eat out, from students to working adults.
+      We therefore aimed for testers with different ages and occupations, not only fellow
+      IT students. All testers below were observed live while using the site.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Testers (live, observed)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tester</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Occupation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">T1</th><td>56</td><td>Female</td><td><span class="todo">TODO: occupation</span> (parent of a group member)</td></tr>
+          <tr><th scope="row">T2</th><td>32</td><td>Male</td><td>Construction worker</td></tr>
+          <tr><th scope="row">T3</th><td>23</td><td>Male</td><td>Student</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li>Occupation: 33 % students, 33 % construction workers, 33 % <span class="todo">TODO</span>.</li>
+      <li>Age: 33 % aged 18–25, 33 % aged 26–40, 33 % aged over 50 (range 23–56).</li>
+      <li>Gender: 33 % female, 67 % male.</li>
+      <li>100 % of these testers were observed live.</li>
+    </ul>
+    <p>
+      Two of three testers were outside the student group, and the ages ranged from 23 to 56,
+      which gave us perspectives closer to a typical restaurant guest. One tester is a parent of a
+      group member. We did not help her during the test, but a personal connection can make a tester
+      more positive, so her ratings may be slightly generous. <span class="todo">TODO: update percentages when all group members’ tests are combined.</span>
+    </p>
+  </section>
+
+  <section id="platforms">
+    <h2>4. Testing platforms</h2>
+    <p>
+      The site was tested on three different devices, three operating systems and three browsers,
+      covering both laptop and tablet.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Devices and browsers</caption>
+        <thead>
+          <tr>
+            <th scope="col">Tester</th>
+            <th scope="col">Device</th>
+            <th scope="col">Screen</th>
+            <th scope="col">Operating system</th>
+            <th scope="col">Browser</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">T1</th><td>MacBook</td><td>14″</td><td>macOS 27.2</td><td>Firefox 159.0.1 (64-bit)</td></tr>
+          <tr><th scope="row">T2</th><td>iPad Air</td><td>11″</td><td>iPadOS 26.6.1</td><td>Safari (iPadOS 26.6.1)</td></tr>
+          <tr><th scope="row">T3</th><td>Lenovo IdeaPad Slim 5</td><td>14″</td><td>Windows 11 25H2</td><td>Edge 157.0.4341.46</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      We also checked the iPad in portrait orientation to see how the layout responds to a narrower screen.
+    </p>
+  </section>
+
+  <section id="feedback">
+    <h2>5. Feedback summary</h2>
+    <p>
+      All three testers completed all seven tasks without help (21 of 21 tasks, 100 %).
+      Almost every task was rated 1, which suggests the overall structure and navigation work well.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Time spent and difficulty (1 = very easy, 5 = very difficult)</caption>
+        <thead>
+          <tr>
+            <th scope="col">Task</th>
+            <th scope="col">T1 Mac</th>
+            <th scope="col">T2 iPad</th>
+            <th scope="col">T3 Windows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">1. Opening hours</th><td>13 s / 3</td><td>10 s / 1</td><td>7 s / 2</td></tr>
+          <tr><th scope="row">2. Drinks</th><td>16 s / 1</td><td>9 s / 1</td><td>14 s / 1</td></tr>
+          <tr><th scope="row">3. Location</th><td>2 s / 1</td><td>6 s / 1</td><td>2 s / 1–2</td></tr>
+          <tr><th scope="row">4. Book a table</th><td>1 min 32 s / 1</td><td>39 s / 1</td><td>1 min 15 s / 1</td></tr>
+          <tr><th scope="row">5. History</th><td>10 s / 1</td><td>5 s / 1</td><td>1 s / 1</td></tr>
+          <tr><th scope="row">6. Offers and events</th><td>5 s / 1</td><td>13 s / 1</td><td>16 s / 1</td></tr>
+          <tr><th scope="row">7. Event menu</th><td>Instant / 1</td><td>5–10 s / 2</td><td>3 s / 2</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Navigation</h3>
+    <p>
+      Testers mostly went straight to the right page from the main menu. About us was found
+      in 1–10 seconds, and the events page in 5–16 seconds. The menu still worked on the iPad
+      when the menu items wrapped onto a new line.
+    </p>
+    <p>
+      The opening hours caused the most searching. Two of three testers looked elsewhere first:
+      T1 checked the home page and About us before finding them in the footer (rated 3, the
+      highest rating in the test), and T3 found them in the footer but expected them on the
+      Contact page.
+    </p>
+    <blockquote>
+      <p>“Contact is nice too. I think the opening hours should be there.” – T3 (translated)</p>
+    </blockquote>
+
+    <h3>Content</h3>
+    <p>
+      The location was easy to find because the address appears on the home page, in the footer
+      and on the Contact page, which two testers commented on positively. The events page
+      received praise for its clear heading.
+    </p>
+    <p>
+      The event menu confused one tester. T2 first went to Menu and found the grill menu there,
+      and only later realised it was the same menu as on the events page. He suggested naming it
+      “Special grill menu” on the menu page and explaining that it is a deal, and adding a heading
+      or a “Menu” button on the events page that jumps down to the menu. T1 and T3 found it right away.
+    </p>
+
+    <h3>Usability</h3>
+    <p>
+      Booking a table took the longest on all devices (39 s to 1 min 32 s), yet every tester
+      rated it 1. This suggests the form is long rather than confusing. T3 hesitated at the
+      email field. Both laptop testers praised the form:
+    </p>
+    <blockquote>
+      <p>“I like that I can see what I have chosen and edit it.” – T1 (translated)</p>
+    </blockquote>
+    <blockquote>
+      <p>“I love that I can jump between text fields with the arrow keys.” – T3 (translated)</p>
+    </blockquote>
+
+    <h3>Design and responsiveness</h3>
+    <p>
+      In iPad portrait orientation, the image next to the food on the events page became heavily
+      cropped and zoomed in, and the menu could have taken up more of the page. In the footer, the
+      opening hours sat very close to the logo. The menu options on the Menu page adapted well.
+      Otherwise the layout looked good.
+    </p>
+
+    <h3>Accessibility</h3>
+    <p>
+      <span class="todo">TODO: add results from the follow-up questions on keyboard navigation (Tab and Enter), 200 % zoom, and contrast and text size.</span>
+    </p>
+
+    <h3 id="client">Client testimonial</h3>
+    <p><span class="todo">TODO: add the client’s testimonial.</span></p>
+  </section>
+
+  <section id="response">
+    <h2>6. Our response</h2>
+    <p>
+      We have not changed the website after testing. Below is what we would do to address the feedback.
+    </p>
+
+    <h3>Show the opening hours where people look for them</h3>
+    <p>
+      Two of three testers expected the opening hours somewhere other than the footer. We would add
+      them to the Contact page and show them near the address on the home page. The footer can
+      keep them as well, since it is consistent across pages.
+    </p>
+
+    <h3>Make the event menu clearer</h3>
+    <p>
+      We would rename the grill menu on the Menu page to “Special grill menu” and add a short note
+      that it is an event deal, with a link to the events page. On the events page, we would add a
+      “See the menu” link that jumps to the menu section using an anchor (<code>id</code>), plus a
+      clear heading above the menu.
+    </p>
+
+    <h3>Speed up the booking form</h3>
+    <p>
+      The form is rated easy but is slow to complete. We would review whether every field is
+      necessary, explain why we ask for an email address (for example to send a booking
+      confirmation), and add <code>autocomplete</code> attributes so the browser can fill in name,
+      email and phone. We would keep the parts testers liked: the summary of choices and the
+      ability to edit them.
+    </p>
+
+    <h3>Improve the tablet layout</h3>
+    <p>
+      For narrow screens we would adjust the events image with a media query, for example by
+      changing the aspect ratio or <code>object-position</code> so it is less cropped, and give the
+      menu more width. In the footer we would make the logo smaller and add more spacing between
+      the logo and the opening hours.
+    </p>
+
+    <h3>Limitations</h3>
+    <p>
+      With a small number of testers, a problem experienced by one person (such as the event menu)
+      may or may not be common. We would want to test the changes with new testers, including
+      more guests over 40 and people who use assistive technology such as screen readers, before
+      drawing firm conclusions.
+    </p>
+  </section>
+
+  <section id="reflection">
+    <h2>7. Self-reflection</h2>
+    <p>
+      <span class="todo">TODO: write your own reflection. Some starting points: what surprised you when you watched real people use the site? What did you learn about working as a group, planning and dividing work? What would you do differently from the start next time?</span>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>
+    <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> |
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
+  </p>
+</footer>
+
+</body>
+</html>
 
