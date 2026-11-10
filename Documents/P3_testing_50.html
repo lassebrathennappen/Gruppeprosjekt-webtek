@@ -27,18 +27,16 @@
     caption { text-align: left; font-weight: bold; padding-bottom: 0.5rem; }
     th, td { border: 1px solid #c9d2dd; padding: 0.4rem 0.6rem; text-align: left; vertical-align: top; }
     thead th { background: #e8eef6; }
-    blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 4px solid #1f4e8c; background: #f1f5fa; }
-    .todo { background: #fff3b0; padding: 0 0.2rem; }
-    footer { margin-top: 3rem; font-size: 0.9rem; }
+    blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border: 2px solid #1f4e8c; }
   </style>
 </head>
 <body>
 
 <header>
   <h1>P3 – Project Testing: OPA!</h1>
-  <p>Authors: <span class="todo">TODO: names of all group members</span></p>
-  <p>Group: <span class="todo">TODO: group number</span></p>
-  <p>Date: <time datetime="2026-11-20">20 November 2026</time></p>
+  <p>Authors: Lasse Bråthen Nappen, Birgitte Linge Hansen, Marte Kiland and Marte Strandli</p>
+  <p>IT2805 – Group 50</p>
+  <p>Date: <time datetime="2026-11-11">11.11.2026</time></p>
   <p>Website: <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">OPA! – Greek restaurant in Trondheim</a></p>
 </header>
 
@@ -59,14 +57,13 @@
 
   <section id="admin">
     <h2>1. Administrative details</h2>
+    <p>Imaginary client name: Fedon (he changed his legal name to be more Greek)</p>
+    <p>Website name: OPA!</p>
+    <p>Contact person: Fedon, owner of OPA!</p>
     <p>
-      Client: <span class="todo">TODO: client name</span>,
-      <span class="todo">TODO: position in the organisation</span>.
-    </p>
-    <p>
-      The website belongs to OPA!, a Greek restaurant in Trondheim city centre (Munkegata 1)
-      serving traditional Greek food with a modern twist. The site lets visitors read about the
-      restaurant, browse the food and drinks menu, find events and special offers, and reserve a table.
+      OPA! is a Greek restaurant in Trondheim city centre (Munkegata 1) serving traditional
+      Greek food with a modern twist. The website lets visitors read about the restaurant,
+      browse the food and drinks menu, find events and special offers, and reserve a table.
     </p>
   </section>
 
@@ -76,9 +73,9 @@
       Our main method was live, observed usability testing. Each tester was given seven tasks,
       read aloud one at a time so that later tasks did not give away earlier answers.
       We did not explain how to navigate the site, and we did not help during the tasks.
-      For each task we recorded whether it was completed, the time spent, the path the tester
-      took, any hesitation or misclicks, and direct quotes. Testers also rated each task from
-      1 (very easy) to 5 (very difficult).
+      For each task we wrote down the time spent, the path the tester took in the navigation,
+      any mistakes, and direct quotes. Testers also rated each task from 1 (very easy) to
+      5 (very difficult).
     </p>
     <h3>Tasks</h3>
     <ol>
@@ -90,13 +87,22 @@
       <li>Find out if the restaurant has any special offers or events.</li>
       <li>Find the menu for the event.</li>
     </ol>
+
+    <h3>Why we did not use a Google Form</h3>
+    <p>The assignment states:</p>
+    <blockquote>
+      <p>“Students often create a Google Form and send it to as many people as possible to get feedback. While this allows for gathering plenty of feedback, it is not a substitute for the ‘real observation’ of someone using your website. Thus, either during the lab session or in some other College setting, try to get a small number of users to do live testing of your website, while you are present to observe them. This will give you invaluable insight into how people are navigating and interacting with your website.”</p>
+    </blockquote>
+    <p>It also asks for:</p>
+    <blockquote>
+      <p>“A brief summary of the questionnaire you send out to testers, as well as the link to the Google Form you used. Don’t forget to ask your client to test the website.”</p>
+    </blockquote>
     <p>
-      After the tasks, testers were asked follow-up questions on design, navigation, content,
-      usability, accessibility (keyboard navigation, 200 % zoom, contrast) and responsiveness.
-    </p>
-    <p>
-      Google Form: <span class="todo">TODO: link to the Google Form</span>.
-      The client was also asked to test the website (see <a href="#client">client testimonial</a>).
+      We understood this to mean that live testing is more valuable than a Google Form. Since the
+      assignment asks us to try to get a small number of users to test live, we chose to do many
+      live tests instead. We see a Google Form as a supplement for groups who cannot find enough
+      people to test live. Every tester was observed in person using the tasks above, and we
+      recorded the results in a shared observation sheet.
     </p>
   </section>
 
@@ -119,14 +125,14 @@
           </tr>
         </thead>
         <tbody>
-          <tr><th scope="row">T1</th><td>56</td><td>Female</td><td><span class="todo">TODO: occupation</span> (parent of a group member)</td></tr>
+          <tr><th scope="row">T1</th><td>56</td><td>Female</td><td>Chemical engineer (parent of a group member)</td></tr>
           <tr><th scope="row">T2</th><td>32</td><td>Male</td><td>Construction worker</td></tr>
           <tr><th scope="row">T3</th><td>23</td><td>Male</td><td>Student</td></tr>
         </tbody>
       </table>
     </div>
     <ul>
-      <li>Occupation: 33 % students, 33 % construction workers, 33 % <span class="todo">TODO</span>.</li>
+      <li>Occupation: 33 % students, 33 % construction workers, 33 % engineers.</li>
       <li>Age: 33 % aged 18–25, 33 % aged 26–40, 33 % aged over 50 (range 23–56).</li>
       <li>Gender: 33 % female, 67 % male.</li>
       <li>100 % of these testers were observed live.</li>
@@ -135,7 +141,7 @@
       Two of three testers were outside the student group, and the ages ranged from 23 to 56,
       which gave us perspectives closer to a typical restaurant guest. One tester is a parent of a
       group member. We did not help her during the test, but a personal connection can make a tester
-      more positive, so her ratings may be slightly generous. <span class="todo">TODO: update percentages when all group members’ tests are combined.</span>
+      more positive, so her ratings may be slightly generous.
     </p>
   </section>
 
@@ -159,13 +165,14 @@
         </thead>
         <tbody>
           <tr><th scope="row">T1</th><td>MacBook</td><td>14″</td><td>macOS 27.2</td><td>Firefox 159.0.1 (64-bit)</td></tr>
-          <tr><th scope="row">T2</th><td>iPad Air</td><td>11″</td><td>iPadOS 26.6.1</td><td>Safari (iPadOS 26.6.1)</td></tr>
+          <tr><th scope="row">T2</th><td>iPad Air (tested in both portrait and landscape)</td><td>11″</td><td>iPadOS 26.6.1</td><td>Safari (iPadOS 26.6.1)</td></tr>
           <tr><th scope="row">T3</th><td>Lenovo IdeaPad Slim 5</td><td>14″</td><td>Windows 11 25H2</td><td>Edge 157.0.4341.46</td></tr>
         </tbody>
       </table>
     </div>
     <p>
-      We also checked the iPad in portrait orientation to see how the layout responds to a narrower screen.
+      On the iPad we checked both portrait and landscape orientation to see how the layout
+      adapted to the screen.
     </p>
   </section>
 
@@ -243,7 +250,8 @@
 
     <h3>Design and responsiveness</h3>
     <p>
-      In iPad portrait orientation, the image next to the food on the events page became heavily
+      After the tasks, the iPad tester was asked to scroll around the website in both portrait and
+      landscape orientation. In portrait, the image next to the food on the events page became heavily
       cropped and zoomed in, and the menu could have taken up more of the page. In the footer, the
       opening hours sat very close to the logo. The menu options on the Menu page adapted well.
       Otherwise the layout looked good.
@@ -251,11 +259,8 @@
 
     <h3>Accessibility</h3>
     <p>
-      <span class="todo">TODO: add results from the follow-up questions on keyboard navigation (Tab and Enter), 200 % zoom, and contrast and text size.</span>
+      T3 is visually impaired and had no trouble with the contrast or the font size on the website.
     </p>
-
-    <h3 id="client">Client testimonial</h3>
-    <p><span class="todo">TODO: add the client’s testimonial.</span></p>
   </section>
 
   <section id="response">
@@ -279,48 +284,23 @@
       clear heading above the menu.
     </p>
 
-    <h3>Speed up the booking form</h3>
-    <p>
-      The form is rated easy but is slow to complete. We would review whether every field is
-      necessary, explain why we ask for an email address (for example to send a booking
-      confirmation), and add <code>autocomplete</code> attributes so the browser can fill in name,
-      email and phone. We would keep the parts testers liked: the summary of choices and the
-      ability to edit them.
-    </p>
-
     <h3>Improve the tablet layout</h3>
     <p>
-      For narrow screens we would adjust the events image with a media query, for example by
-      changing the aspect ratio or <code>object-position</code> so it is less cropped, and give the
-      menu more width. In the footer we would make the logo smaller and add more spacing between
-      the logo and the opening hours.
-    </p>
-
-    <h3>Limitations</h3>
-    <p>
-      With a small number of testers, a problem experienced by one person (such as the event menu)
-      may or may not be common. We would want to test the changes with new testers, including
-      more guests over 40 and people who use assistive technology such as screen readers, before
-      drawing firm conclusions.
+      These issues came up when the iPad tester was asked to scroll around the website after the
+      test, in both landscape and portrait orientation. For narrow screens we would adjust the events
+      image with a media query and give the menu more width. In the footer we would make the logo
+      smaller and add more spacing between the logo and the opening hours.
     </p>
   </section>
 
   <section id="reflection">
     <h2>7. Self-reflection</h2>
     <p>
-      <span class="todo">TODO: write your own reflection. Some starting points: what surprised you when you watched real people use the site? What did you learn about working as a group, planning and dividing work? What would you do differently from the start next time?</span>
+      X
     </p>
   </section>
 
 </main>
 
-<footer>
-  <p>
-    <a href="https://validator.w3.org/check?uri=referer">Validate HTML</a> |
-    <a href="https://jigsaw.w3.org/css-validator/check/referer">Validate CSS</a>
-  </p>
-</footer>
-
 </body>
 </html>
-
