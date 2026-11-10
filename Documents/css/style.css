@@ -21,3 +21,26 @@ td {
   border: 1px solid #1E1E1E;
   border-radius: 4px;
 }
+
+
+.testing-report blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border: 2px solid #1f4e8c;
+}
+
+.testing-report table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.testing-report th,
+.testing-report td {
+  border: 1px solid #1E1E1E;
+  padding: 0.4rem 0.6rem;
+}
+
+.testing-report .table-wrap {
+  overflow-x: auto;
+}
