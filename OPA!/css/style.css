@@ -1463,17 +1463,3 @@ section.contact {
   .contact-text p,
   .contact-text address { font-size: 18px; }
 }
-
-/* Skip link: skjult til den får fokus med Tab */
-.skip-link {
-  position: absolute;
-  left: -9999px;
-}
-.skip-link:focus {
-  left: 1rem;
-  top: 1rem;
-  z-index: 1000;
-  padding: 0.5rem 1rem;
-  background: white;
-  color: black;
-}
