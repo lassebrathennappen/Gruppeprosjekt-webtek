@@ -3,7 +3,6 @@
 // og denne filen fyller dem. Da står navbar og footer bare ett sted.
 
 const headerHTML = `
-    <a href="#main" class="skip-link">Skip to main content</a>
     <a href="index.html" class="logo">OPA!</a>
     <nav>
         <ul>
