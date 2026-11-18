@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+ 
 <header>
   <h1>P4 – Project Coding: OPA!</h1>
   <p>Authors: Lasse Bråthen Nappen, Birgitte Linge Hansen, Marte Kiland and Marte Strandli</p>
@@ -18,7 +18,7 @@
     <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">OPA! – index.html</a>
   </p>
 </header>
-
+ 
 <nav aria-label="Table of contents">
   <h2>Contents</h2>
   <ol>
@@ -29,9 +29,9 @@
     <li><a href="#modularity">Modularity</a></li>
   </ol>
 </nav>
-
+ 
 <main>
-
+ 
   <section id="admin">
     <h2>1. Administrative details</h2>
     <p>Imaginary client name: Fedon</p>
@@ -43,7 +43,7 @@
       The website starts at <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">index.html</a>.
     </p>
   </section>
-
+ 
   <section id="changes">
     <h2>2. Changes from the design (P2)</h2>
     <p>
@@ -51,7 +51,7 @@
       navbar, banner, olive-and-lemon divider and footer. Below are the changes we made while
       coding, and why.
     </p>
-
+ 
     <h3>Navbar and footer are made with JavaScript (layout.js instead of nav.js)</h3>
     <p>
       In P2 we planned a file called <code>nav.js</code> for the navbar. We ended up with
@@ -59,7 +59,7 @@
       footer is repeated on every page too, so it made sense to handle both in the same file.
       See <a href="#modularity">Modularity</a> for details.
     </p>
-
+ 
     <h3>The current page is marked with aria-current</h3>
     <p>
       As planned, the current page is underlined in the navbar. Instead of adding a class by hand on
@@ -68,12 +68,12 @@
       underline. This works automatically on every page, and screen readers also read the link as
       "current page".
     </p>
-
+ 
     <h3>event.html was renamed to events.html</h3>
     <p>
       The page is called "Events" in the navbar, so we changed the file name to match.
     </p>
-
+ 
     <h3>Opening hours on more pages</h3>
     <p>
       In user testing (P3), most testers looked for the opening hours on the About us page, the
@@ -82,7 +82,7 @@
       of About us. They are still in the footer as well. The opening hours are written only once, in
       <code>layout.js</code>, and every page gets them from there.
     </p>
-
+ 
     <h3>Clearer special offer (Menu and Events)</h3>
     <p>
       In user testing (P3), some testers did not understand that the grill menu was a special offer,
@@ -90,14 +90,15 @@
       these changes:
     </p>
     <ul>
-      <li>On the Menu page, the category "From the Grill" is now called "Special Grill". It has a
-        short text about the 20&nbsp;% discount on Fridays, with a link to the Events page.</li>
+      <li>On the Menu page, the category is still called "From the Grill", but it now has a short
+        text explaining that these dishes are our Special Grill menu, with 20&nbsp;% off on Fridays
+        and a link to the Events page.</li>
       <li>On the Events page, there is a "See the menu" button that jumps down to the menu.</li>
       <li>The grill menu on the Events page has a visible heading, "Special Grill menu", and a note
         that the prices are Friday prices with 20&nbsp;% off, with a link to the regular prices on the
         Menu page.</li>
     </ul>
-
+ 
     <h3>Booked times in the reservation flow</h3>
     <p>
       In the design, unavailable dates were greyed out. We also grey out times that are already
@@ -105,20 +106,20 @@
       project has no back end, the booked times are example data in <code>reservations.js</code>.
       This makes the booking flow feel more realistic.
     </p>
-
+ 
     <h3>No footer on the reservation page</h3>
     <p>
       The reservation page does not have a footer. We removed it so the user can focus on the
       booking steps, and so the booking boxes have more room on the screen. The navbar is still
       there, so the user can leave the booking at any time.
     </p>
-
+ 
     <h3>Sticky navbar</h3>
     <p>
       The navbar stays at the top of the screen when the user scrolls, as planned in P2. Testers in
       P3 also asked for this, since they otherwise had to scroll back to the top to change page.
     </p>
-
+ 
     <h3>Hamburger menu on phones and tablets in portrait mode</h3>
     <p>
       This was not in the P2 design. In P3, testers found the navbar links small on phones. On screens
@@ -128,14 +129,14 @@
       the keyboard and screen readers, and the Escape key closes the menu. On larger screens the
       normal navbar is shown.
     </p>
-
+ 
     <h3>Same hover effect on the Reservations buttons</h3>
     <p>
       In P3, testers noticed that the Reservations button looked different on hover in the navbar
       and on the homepage. The Reservations button in the navbar now also grows a little on hover,
       like the buttons on the homepage.
     </p>
-
+ 
     <h3>Responsive layout</h3>
     <p>
       The mockups were made for a 1440px wide screen. We use the same breakpoints on all pages
@@ -149,7 +150,7 @@
       narrow column. In the footer, the logo is smaller and placed above the information, so it is no
       longer squeezed against the opening hours.
     </p>
-
+ 
     <h3>Image file names</h3>
     <p>
       The image names in the P2 file list (for example <code>hero-meze.png</code>) were changed to
@@ -157,7 +158,7 @@
       same type of content as in the design.
     </p>
   </section>
-
+ 
   <section id="requirements">
     <h2>3. Minimum requirements</h2>
     <p>Each team member fulfilled their JavaScript requirements like this:</p>
@@ -185,8 +186,37 @@
         marks today's date and greys out unavailable dates.
       </li>
     </ul>
+ 
+    <p>
+      The other minimum requirements from the design document (P2) were fulfilled like this:
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Responsive components, CSS layout and accessibility</caption>
+        <thead>
+          <tr>
+            <th scope="col">Requirement</th>
+            <th scope="col">How it was fulfilled</th>
+            <th scope="col">Page(s)</th>
+            <th scope="col">In charge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Responsive component 1</td><td>The current page is underlined in the navbar (set with <code>aria-current</code> in <code>layout.js</code>)</td><td>All pages</td><td>All</td></tr>
+          <tr><td>Responsive component 2</td><td>The pill-shaped link buttons have their own style and grow on hover</td><td>index.html and contact.html</td><td>Marte S and Marte K</td></tr>
+          <tr><td>Responsive component 3</td><td>The chosen menu category turns orange and gets an underline</td><td>menu.html</td><td>Birgitte</td></tr>
+          <tr><td>Responsive component 4</td><td>The chosen buttons in the reservation flow turn orange (<code>aria-pressed</code>)</td><td>reservations.html</td><td>Lasse</td></tr>
+          <tr><td>CSS for layout</td><td>Flexbox for the navbar, footer and buttons. Grid for the images, the menu and the calendar</td><td>All pages</td><td>All</td></tr>
+          <tr><td>Accessibility 1</td><td>Semantic HTML, such as <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>address</code> and <code>footer</code></td><td>All pages</td><td>All</td></tr>
+          <tr><td>Accessibility 2</td><td>Descriptive alt text on all images</td><td>All pages</td><td>All</td></tr>
+          <tr><td>Accessibility 3</td><td>Labels for all fields in the contact form of the reservation flow</td><td>reservations.html</td><td>Lasse</td></tr>
+          <tr><td>Accessibility 4</td><td>All choices in the reservation flow are real buttons, so they work with the keyboard</td><td>reservations.html</td><td>Lasse</td></tr>
+          <tr><td>Accessibility 5</td><td>High colour contrast between text and background</td><td>All pages</td><td>All</td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
-
+ 
   <section id="files">
     <h2>4. Who worked on which files</h2>
     <div class="table-wrap">
@@ -213,11 +243,15 @@
           <tr><td>scripts/reservations.js</td><td>Form validation</td><td>Marte K</td></tr>
           <tr><td>scripts/reservations.js</td><td>Dynamic calendar</td><td>Marte S</td></tr>
           <tr><td>Images and artwork</td><td>Logo, photos and the olive-and-lemon divider</td><td>Marte S and Birgitte</td></tr>
+          <tr><td>Navbar design</td><td>Navbar layout and styling</td><td>Marte S</td></tr>
+          <tr><td>Banner design</td><td>The blue title banner on every page</td><td>Marte S</td></tr>
+          <tr><td>Button design</td><td>The orange and outlined pill-shaped buttons and their hover effect</td><td>Marte S</td></tr>
+          <tr><td>Footer design</td><td>Footer content and styling</td><td>Birgitte and Marte S</td></tr>
         </tbody>
       </table>
     </div>
   </section>
-
+ 
   <section id="modularity">
     <h2>5. Modularity</h2>
     <p>
@@ -254,9 +288,13 @@
         <code>reservations.js</code>, is only linked on that page.
       </li>
     </ul>
+    <p>
+      Lasse was responsible for implementing the modularity with <code>layout.js</code>. The
+      whole group was responsible for the shared stylesheet.
+    </p>
   </section>
-
+ 
 </main>
-
+ 
 </body>
 </html>
