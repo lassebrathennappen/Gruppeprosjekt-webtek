@@ -1584,7 +1584,7 @@ nav a.nav-button:hover {
   color: var(--dark-blue);
 }
 
-/* ----- Liten laptop og nettbrett i landskap ----- */
+/* ----- Liten laptop og nettbrett----- */
 @media (max-width: 1100px) {
   /* mindre logo og mer luft mellom logo og åpningstider */
   footer { gap: 60px; }
@@ -1595,7 +1595,7 @@ nav a.nav-button:hover {
   .event-menu-title { font-size: 40px; }
 }
 
-/* ----- Mobil og nettbrett i portrett (iPad er ca. 768–834px bred) ----- */
+/* ----- Mobil og nettbrett i portrett ----- */
 @media (max-width: 900px) {
   /* Hamburgermeny: logo til venstre, knapp til høyre, lenkene under */
   header {
