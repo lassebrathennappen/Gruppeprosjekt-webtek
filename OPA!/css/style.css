@@ -1463,3 +1463,266 @@ section.contact {
   .contact-text p,
   .contact-text address { font-size: 18px; }
 }
+
+
+/* ===== Åpningstider på forsiden, Contact og About us ===== */
+/* Teksten fylles inn av scripts/layout.js */
+p.opening-hours {
+  align-self: center;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* "Visit us" nederst på About us */
+.visit-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.visit-us h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.visit-us address {
+  font-style: normal;
+  font-size: 24px;
+}
+
+.visit-us address a {
+  color: var(--dark-blue);
+}
+
+@media (max-width: 576px) {
+  .visit-us { padding: 48px 16px; }
+  .visit-us h2 { font-size: 36px; }
+  p.opening-hours,
+  .visit-us address { font-size: 20px; }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------*/
+/* ===== Endringer etter brukertestingen (P3) ===== */
+
+/* Navbaren blir liggende øverst når man scroller */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Når man hopper til en lenke på samme side (f.eks. "See the menu"),
+   havner ikke overskriften bak den sticky navbaren */
+html {
+  scroll-padding-top: 120px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Reservations-knappen i navbaren vokser også ved hover, likt som knappene på forsiden */
+nav a.nav-button {
+  transition: transform 0.2s ease;
+}
+
+nav a.nav-button:hover {
+  transform: scale(1.1);
+}
+
+/* Hamburgerknappen er skjult på store skjermer */
+.menu-toggle {
+  display: none;
+}
+
+/* ----- Tydeligere eventmeny ----- */
+
+/* Kort tekst over Special Grill på menysiden */
+.menu-note {
+  max-width: 700px;
+  margin: 0 auto 48px;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--dark-blue);
+}
+
+.menu-note a,
+.event-menu-note a {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+/* "See the menu"-knappen på events-siden */
+.event-text .pillbutton {
+  margin-top: 16px;
+  margin-left: 13px;
+}
+
+/* Synlig overskrift over grillmenyen på events-siden */
+.event-menu-title {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 400;
+  color: var(--dark-blue);
+}
+
+.event-menu-note {
+  max-width: 410px;
+  margin: 0 0 40px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--dark-blue);
+}
+
+/* ----- Liten laptop og nettbrett i landskap ----- */
+@media (max-width: 1100px) {
+  /* mindre logo og mer luft mellom logo og åpningstider */
+  footer { gap: 60px; }
+  .footer-logo .logo { font-size: 72px; }
+  .footer-info { gap: 40px; }
+
+  .event-dishes { padding: 40px 40px 40px 80px; }
+  .event-menu-title { font-size: 40px; }
+}
+
+/* ----- Mobil og nettbrett i portrett (iPad er ca. 768–834px bred) ----- */
+@media (max-width: 900px) {
+  /* Hamburgermeny: logo til venstre, knapp til høyre, lenkene under */
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    min-height: 0;
+    padding: 12px 20px;
+    gap: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 3px solid var(--off-white);
+    outline-offset: 2px;
+  }
+
+  .menu-toggle-bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--off-white);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* De tre strekene blir til en X når menyen er åpen */
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Lenkene er skjult til man trykker på knappen */
+  header nav {
+    display: none;
+    width: 100%;
+  }
+
+  header.menu-open nav {
+    display: block;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0 16px;
+  }
+
+  header nav a {
+    display: block;
+    padding: 14px 4px;
+    font-size: 18px;
+  }
+
+  header nav a.nav-button {
+    display: flex;
+    width: 100%;
+    height: 48px;
+    margin-top: 8px;
+  }
+
+  nav a.nav-button:hover { transform: none; }
+
+  /* Footer: logo over infoen */
+  footer {
+    flex-direction: column;
+    gap: 48px;
+    padding: 60px 30px;
+  }
+  .footer-col { text-align: center; }
+
+  /* Events-siden: bilde og tekst under hverandre, så bildene ikke blir strukket */
+  .event-page .welcome,
+  .event-page .location {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    min-height: 0;
+  }
+
+  .event-page .welcome img,
+  .event-page .location img {
+    contain: none;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .event-page .welcome-text { padding: 48px 40px; }
+
+  /* Grillmenyen bruker hele bredden, i to kolonner */
+  .event-dishes { padding: 48px 40px; }
+  .event-dishes .dish-list {
+    grid-template-columns: 1fr 1fr;
+    max-width: none;
+    gap: 40px;
+  }
+  .event-menu-note { max-width: none; }
+
+  html { scroll-padding-top: 90px; }
+}
+
+/* ----- Mobil ----- */
+@media (max-width: 576px) {
+  .event-dishes .dish-list { grid-template-columns: 1fr; }
+  .event-page .welcome-text { padding: 40px 20px; }
+  .event-text .pillbutton { margin-left: 0; }
+  .event-menu-title { font-size: 32px; }
+  .event-menu-note,
+  .menu-note { font-size: 18px; }
+  .event-page .welcome img,
+  .event-page .location img { aspect-ratio: 4 / 3; }
+}

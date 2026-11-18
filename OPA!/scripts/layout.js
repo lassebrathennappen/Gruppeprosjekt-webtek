@@ -2,9 +2,20 @@
 // Hver HTML-fil har bare tomme <header></header> og <footer></footer>,
 // og denne filen fyller dem. Da står navbar og footer bare ett sted.
 
+// Åpningstidene står bare her. Footeren og alle elementer med
+// class="opening-hours" henter dem herfra, så de bare må endres ett sted.
+const openingDays = "Tuesday–Sunday";
+const openingTime = "15–22";
+
 const headerHTML = `
     <a href="index.html" class="logo">OPA!</a>
-    <nav>
+    <!-- Hamburgerknapp: vises bare på mobil og nettbrett i portrett (se style.css) -->
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Menu">
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+        <span class="menu-toggle-bar"></span>
+    </button>
+    <nav id="main-nav" aria-label="Main">
         <ul>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="events.html">Events</a></li>
@@ -23,7 +34,7 @@ const footerHTML = `
     <div class="footer-info">
         <div class="footer-col">
             <h2>Opening hours</h2>
-            <p>Tuesday–Sunday:<br>15–22</p>
+            <p>${openingDays}:<br>${openingTime}</p>
         </div>
         <div class="footer-col">
             <h2>Location</h2>
@@ -50,6 +61,37 @@ if (header) {
 }
 if (footer) {
     footer.innerHTML = footerHTML;
+}
+
+// Hamburgermeny: knappen åpner og lukker navbaren på små skjermer.
+// aria-expanded forteller skjermlesere om menyen er åpen eller lukket.
+const menuToggle = document.querySelector(".menu-toggle");
+
+function setMenuOpen(isOpen) {
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    header.classList.toggle("menu-open", isOpen);
+}
+
+if (menuToggle) {
+    menuToggle.addEventListener("click", function () {
+        const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!isOpen);
+    });
+
+    // Escape lukker menyen og sender fokus tilbake til knappen
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && header.classList.contains("menu-open")) {
+            setMenuOpen(false);
+            menuToggle.focus();
+        }
+    });
+}
+
+// Fyller inn åpningstidene på sidene som har class="opening-hours"
+const openingHoursElements = document.querySelectorAll(".opening-hours");
+
+for (const element of openingHoursElements) {
+    element.textContent = "Open " + openingDays + ", " + openingTime;
 }
 
 // Finner hvilken side vi er på, f.eks. "menu.html" (forsiden kan være tom "")

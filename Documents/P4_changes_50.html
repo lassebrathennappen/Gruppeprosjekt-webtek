@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P4 Changes OPA!</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>P4 – Project Coding: OPA!</h1>
+  <p>Authors: Lasse Bråthen Nappen, Birgitte Linge Hansen, Marte Kiland and Marte Strandli</p>
+  <p>IT2805 – Group 50</p>
+  <p>Date: <time datetime="2026-11-20">20.11.2026</time></p>
+  <p>
+    Start page of the website:
+    <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">OPA! – index.html</a>
+  </p>
+</header>
+
+<nav aria-label="Table of contents">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#admin">Administrative details</a></li>
+    <li><a href="#changes">Changes from the design (P2)</a></li>
+    <li><a href="#requirements">Minimum requirements</a></li>
+    <li><a href="#files">Who worked on which files</a></li>
+    <li><a href="#modularity">Modularity</a></li>
+  </ol>
+</nav>
+
+<main>
+
+  <section id="admin">
+    <h2>1. Administrative details</h2>
+    <p>Imaginary client name: Fedon</p>
+    <p>Website name: OPA!</p>
+    <p>Contact person: Fedon, owner of OPA!</p>
+    <p>
+      OPA! is a Greek restaurant in Trondheim with a modern twist. The website presents the
+      restaurant, the menu and the Friday grill event, and lets visitors reserve a table.
+      The website starts at <a href="https://lassebrathennappen.github.io/Gruppeprosjekt-webtek/OPA!/index.html">index.html</a>.
+    </p>
+  </section>
+
+  <section id="changes">
+    <h2>2. Changes from the design (P2)</h2>
+    <p>
+      The website follows the design document in most details: the same pages, colours, fonts,
+      navbar, banner, olive-and-lemon divider and footer. Below are the changes we made while
+      coding, and why.
+    </p>
+
+    <h3>Navbar and footer are made with JavaScript (layout.js instead of nav.js)</h3>
+    <p>
+      In P2 we planned a file called <code>nav.js</code> for the navbar. We ended up with
+      <code>layout.js</code>, which builds both the navbar and the footer. We did this because the
+      footer is repeated on every page too, so it made sense to handle both in the same file.
+      See <a href="#modularity">Modularity</a> for details.
+    </p>
+
+    <h3>The current page is marked with aria-current</h3>
+    <p>
+      As planned, the current page is underlined in the navbar. Instead of adding a class by hand on
+      every page, <code>layout.js</code> finds the current page and sets
+      <code>aria-current="page"</code> on the matching link. The CSS uses this attribute for the
+      underline. This works automatically on every page, and screen readers also read the link as
+      "current page".
+    </p>
+
+    <h3>event.html was renamed to events.html</h3>
+    <p>
+      The page is called "Events" in the navbar, so we changed the file name to match.
+    </p>
+
+    <h3>Opening hours on more pages</h3>
+    <p>
+      In user testing (P3), most testers looked for the opening hours on the About us page, the
+      Contact page or the homepage, and not in the footer. We therefore show the opening hours next to
+      the address on the homepage and the Contact page, and in a new "Visit us" section at the bottom
+      of About us. They are still in the footer as well. The opening hours are written only once, in
+      <code>layout.js</code>, and every page gets them from there.
+    </p>
+
+    <h3>Clearer special offer (Menu and Events)</h3>
+    <p>
+      In user testing (P3), some testers did not understand that the grill menu was a special offer,
+      and were confused that the same grill menu was on both the Menu and the Events page. We made
+      these changes:
+    </p>
+    <ul>
+      <li>On the Menu page, the category "From the Grill" is now called "Special Grill". It has a
+        short text about the 20&nbsp;% discount on Fridays, with a link to the Events page.</li>
+      <li>On the Events page, there is a "See the menu" button that jumps down to the menu.</li>
+      <li>The grill menu on the Events page has a visible heading, "Special Grill menu", and a note
+        that the prices are Friday prices with 20&nbsp;% off, with a link to the regular prices on the
+        Menu page.</li>
+    </ul>
+
+    <h3>Booked times in the reservation flow</h3>
+    <p>
+      In the design, unavailable dates were greyed out. We also grey out times that are already
+      booked. These buttons are disabled and crossed out, so the user cannot choose them. Since the
+      project has no back end, the booked times are example data in <code>reservations.js</code>.
+      This makes the booking flow feel more realistic.
+    </p>
+
+    <h3>No footer on the reservation page</h3>
+    <p>
+      The reservation page does not have a footer. We removed it so the user can focus on the
+      booking steps, and so the booking boxes have more room on the screen. The navbar is still
+      there, so the user can leave the booking at any time.
+    </p>
+
+    <h3>Sticky navbar</h3>
+    <p>
+      The navbar stays at the top of the screen when the user scrolls, as planned in P2. Testers in
+      P3 also asked for this, since they otherwise had to scroll back to the top to change page.
+    </p>
+
+    <h3>Hamburger menu on phones and tablets in portrait mode</h3>
+    <p>
+      This was not in the P2 design. In P3, testers found the navbar links small on phones. On screens
+      up to 900px wide (phones and iPads in portrait mode), the links are therefore hidden behind a
+      hamburger button. The button opens and closes the menu, and turns into an X when the menu is
+      open. It is a real <code>&lt;button&gt;</code> with <code>aria-expanded</code>, so it works with
+      the keyboard and screen readers, and the Escape key closes the menu. On larger screens the
+      normal navbar is shown.
+    </p>
+
+    <h3>Same hover effect on the Reservations buttons</h3>
+    <p>
+      In P3, testers noticed that the Reservations button looked different on hover in the navbar
+      and on the homepage. The Reservations button in the navbar now also grows a little on hover,
+      like the buttons on the homepage.
+    </p>
+
+    <h3>Responsive layout</h3>
+    <p>
+      The mockups were made for a 1440px wide screen. We use the same breakpoints on all pages
+      (1100px, 768px and 576px). On smaller screens the split layout with text and image stacks
+      into one column, and images keep their aspect ratio so they are not stretched.
+    </p>
+    <p>
+      In P3 we found problems on the iPad in portrait mode, so we made these changes for screens up to
+      900px wide: On the Events page, the images and text are placed under each other, so the images
+      are no longer stretched, and the grill menu uses the full width in two columns instead of one
+      narrow column. In the footer, the logo is smaller and placed above the information, so it is no
+      longer squeezed against the opening hours.
+    </p>
+
+    <h3>Image file names</h3>
+    <p>
+      The image names in the P2 file list (for example <code>hero-meze.png</code>) were changed to
+      shorter names such as <code>food.jpg</code> and <code>grandma.jpg</code>. The images are the
+      same type of content as in the design.
+    </p>
+  </section>
+
+  <section id="requirements">
+    <h2>3. Minimum requirements</h2>
+    <p>Each team member fulfilled their JavaScript requirements like this:</p>
+    <ul>
+      <li>
+        <strong>Birgitte</strong> fulfilled her JavaScript requirement with the menu switcher in
+        <code>menu.js</code> on <code>menu.html</code>, where the user chooses between the sections of
+        the menu. The chosen section changes colour and gets an underline.
+      </li>
+      <li>
+        <strong>Lasse</strong> fulfilled his JavaScript requirement with the reservation flow in
+        <code>reservations.js</code> on <code>reservations.html</code>. The flow remembers the number of
+        guests, the date and the time, and the user can go back and edit a choice. Chosen buttons
+        turn orange. Lasse also made the booked times and <code>layout.js</code> (shared navbar and footer,
+        hamburger menu and opening hours).
+      </li>
+      <li>
+        <strong>Marte K</strong> fulfilled her JavaScript requirement with form validation in
+        <code>reservations.js</code> on <code>reservations.html</code>. The user gets an error message
+        if the name or e-mail is missing or wrong.
+      </li>
+      <li>
+        <strong>Marte S</strong> fulfilled her JavaScript requirement with the dynamic calendar in
+        <code>reservations.js</code> on <code>reservations.html</code>. The calendar generates the days,
+        marks today's date and greys out unavailable dates.
+      </li>
+    </ul>
+  </section>
+
+  <section id="files">
+    <h2>4. Who worked on which files</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>Files and responsibility</caption>
+        <thead>
+          <tr>
+            <th scope="col">File</th>
+            <th scope="col">Description</th>
+            <th scope="col">In charge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>index.html</td><td>The homepage</td><td>Marte S</td></tr>
+          <tr><td>menu.html</td><td>The restaurant's menu</td><td>Birgitte</td></tr>
+          <tr><td>events.html</td><td>The Friday grill event and special menu</td><td>Lasse</td></tr>
+          <tr><td>about-us.html</td><td>The story of the restaurant</td><td>Marte K</td></tr>
+          <tr><td>contact.html</td><td>Contact information</td><td>Marte K</td></tr>
+          <tr><td>reservations.html</td><td>Table reservation</td><td>Lasse</td></tr>
+          <tr><td>css/style.css</td><td>The shared stylesheet for all pages</td><td>All</td></tr>
+          <tr><td>scripts/layout.js</td><td>Shared navbar, footer, hamburger menu and opening hours</td><td>Lasse</td></tr>
+          <tr><td>scripts/menu.js</td><td>Menu switcher</td><td>Birgitte</td></tr>
+          <tr><td>scripts/reservations.js</td><td>Reservation flow and booked times</td><td>Lasse</td></tr>
+          <tr><td>scripts/reservations.js</td><td>Form validation</td><td>Marte K</td></tr>
+          <tr><td>scripts/reservations.js</td><td>Dynamic calendar</td><td>Marte S</td></tr>
+          <tr><td>Images and artwork</td><td>Logo, photos and the olive-and-lemon divider</td><td>All</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="modularity">
+    <h2>5. Modularity</h2>
+    <p>
+      Repeated code is only written once:
+    </p>
+    <ul>
+      <li>
+        <strong>Navbar and footer:</strong> Every HTML page only has an empty
+        <code>&lt;header&gt;&lt;/header&gt;</code> and <code>&lt;footer&gt;&lt;/footer&gt;</code>.
+        The shared file <code>scripts/layout.js</code> fills them with the navbar and the footer.
+        If we change a link or the opening hours, we only change it in one place.
+      </li>
+      <li>
+        <strong>Active page in the navbar:</strong> <code>layout.js</code> also finds the current page
+        and marks the right link, so this code is not repeated on each page.
+      </li>
+      <li>
+        <strong>Hamburger menu:</strong> The hamburger button and its JavaScript are also in
+        <code>layout.js</code>, so it works on every page without extra code in the HTML files.
+      </li>
+      <li>
+        <strong>Opening hours:</strong> The opening hours are written once in <code>layout.js</code>.
+        The footer and every element with <code>class="opening-hours"</code> get the text from there,
+        so a change only has to be made in one place.
+      </li>
+      <li>
+        <strong>One stylesheet:</strong> All pages use the same <code>css/style.css</code>. There is
+        no separate stylesheet for each page.
+      </li>
+      <li>
+        <strong>JavaScript in external files:</strong> All JavaScript is in the
+        <code>scripts</code> folder and is linked with <code>&lt;script src="..." defer&gt;</code>.
+        Code that is only used on one page, like <code>menu.js</code> and
+        <code>reservations.js</code>, is only linked on that page.
+      </li>
+    </ul>
+    <p>
+      Lasse was responsible for implementing the modularity with <code>layout.js</code>. The
+      whole group was responsible for the shared stylesheet.
+    </p>
+  </section>
+
+</main>
+
+</body>
+</html>
